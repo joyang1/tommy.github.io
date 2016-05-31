@@ -1,5 +1,5 @@
-auto:true
 markdown: kramdown
-highlighter: rouge
 permalink: /tommy.github.io/posts/:title.html
 extensions: [smart]
+highlighter: rouge
+
