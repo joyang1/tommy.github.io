@@ -1,4 +1,4 @@
 markdown: rdiscount
 pygments: true
-permalink: /posts/:title.html
+permalink: /tommy.github.io/posts/:title.html
 extensions: [smart]
