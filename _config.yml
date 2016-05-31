@@ -1,10 +1,10 @@
 # Site settings
-title: Hux Blog
-SEOTitle: 黄玄的博客 | Hux Blog
+title: Tommy Yang Blog
+SEOTitle: 杨挺的博客 | Tommy Blog
 header-img: /tommy.github.io/img/home-bg.jpg
-email: huxpro@gmail.com
-description: "关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
-keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友"
+email: tingzai.yang@gmail.com
+description: "关于后台与设计、移动开发 | 杨挺，Web & Mobile Lover，Software R&D Engineer | 这里是 @Tommy杨挺 的个人博客，与你一起发现更大的世界。"
+keyword: "杨挺, Tommy杨挺, Tommy, 鬼栈, tingyang , @tingyang, 杨挺的博客, Tommy Blog, 博客, 个人网站, 互联网, 后台, 设计, 产品"
 url: "http://joyang1.github.io/tommy.github.io/"              # your host, for absolute URL
 baseurl: "/tommy.github.io"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
