@@ -1,6 +1,6 @@
 # Site settings
-title: Tommy Yang Blog
-SEOTitle: 杨挺的博客 | Tommy Blog
+title: Tommy Yang’s Blog
+SEOTitle: 杨挺的博客 | Tommy's Blog
 header-img: /tommy.github.io/img/home-bg.jpg
 email: tingzai.yang@gmail.com
 description: "关于后台与设计、移动开发 | 杨挺，Web & Mobile Lover，Software R&D Engineer | 这里是 @Tommy杨挺 的个人博客，与你一起发现更大的世界。"
@@ -13,7 +13,7 @@ baseurl: "/tommy.github.io"                             # for example, '/blog' i
 # SNS settings
 RSS: false
 weibo_username:     tommytingyang
-zhihu_username:     tommy
+zhihu_username:     ting-yang-31
 github_username:    joyang1
 #twitter_username:  huxpro
 facebook_username:  tingzai.yang
@@ -69,7 +69,7 @@ ga_domain: github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，我想去看看。"
+sidebar-about-description: "写写代码，做做项目，看看产品。世界那么大，我想去看看。"
 sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

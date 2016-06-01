@@ -40,7 +40,7 @@
     var $navbar = document.querySelector('#huxblog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
 
-    var __HuxNav__ = {
+    var __TommyNav__ = {
         close: function(){
             $navbar.className = " ";
             // wait until animation end.
@@ -60,9 +60,9 @@
     // Bind Event
     $toggle.addEventListener('click', function(e){
         if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
+            __TommyNav__.close()
         }else{
-            __HuxNav__.open()
+            __TommyNav__.open()
         }
     })
 
@@ -80,6 +80,6 @@
     document.addEventListener('click', function(e){
         if(e.target == $toggle) return;
         if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
+        __TommyNav__.close();
     })
 </script>
