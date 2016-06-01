@@ -1,9 +1,9 @@
 {
     "name": "tommy-blog",
     "title": "Tommy's Blog",
-    "author": "Tommy <tingzai.yang@gmail.com>",
+    "author": "joyang1 <tingzai.yang@gmail.com>",
     "version": "1.6.0",
-    "homepage": "http://joyang1.github.io",
+    "homepage": "http://joyang1.github.io/tommy.github.io/",
     "repository": {
         "type": "git",
         "url": "https://github.com/joyang1/tommy.github.io"
@@ -19,8 +19,8 @@
     "scripts": {
         "preview": "cd _site; python -m SimpleHTTPServer 8020",
         "watch"  : "grunt watch & npm run preview & jekyll serve -w",
-        "boil"   : "git push boilerplate boilerplate:master",
-        "push"   : "git push origin master --tag",
-        "cafe"   : "git co gitcafe-pages; git merge master; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co master;"
+        "boil"   : "git push boilerplate boilerplate:gh-pages",
+        "push"   : "git push origin gh-pages --tag",
+        "cafe"   : "git co gitcafe-pages; git merge gh-pages; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co gh-pages;"
     }
 }
