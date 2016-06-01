@@ -15,19 +15,20 @@ tags:
 > “Let's Start. ”
 
 
-## Retrieve(检索、查询)：
-分两种(一种是插入对象没有自定义; 第二种就是自定义插入对象)
-这两种情况下的区别就是插入数据库中的文档类型不一样，一个是BsonDocument,一个是自定义对象(下面会有例子),分别使用两种不同的方式
+## Retrieve（检索、查询）
 
-## Create(添加)
-<p>
+分两种（一种是插入对象没有自定义; 第二种就是自定义插入对象）
+这两种情况下的区别就是插入数据库中的文档类型不一样，一个是BsonDocument,一个是自定义对象（下面会有例子）,分别使用两种不同的方式
+
+## Create（添加）
+
 Untyped Documents
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-var client = new MongoClient("mongodb://localhost:27017");
-var database = client.GetDatabase("MyDb");
-var collection = client.GetCollection<BsonDocument>("MyCollection");
+var client = new MongoClient（"mongodb://localhost:27017"）;
+var database = client.GetDatabase（"MyDb"）;
+var collection = client.GetCollection<BsonDocument>（"MyCollection"）;
 
 await collection.InsertOneAsync(new BsonDocument("Name", "Tommy"));
 //如果此处你的函数不是异步的，就不写await，写的话会报错,如果你想写的话就自己写个异步函数，这样的话就没问题了。官网建议使用异步方式。想想也知道异步好一些啊！
@@ -66,11 +67,9 @@ foreach(var person in list)
 {
  Console.WriteLine(person.Name);
 }
-</p>
 
 下面介绍一下U(Update)和D(Delete)
-## U更新:
-<p>
+## U更新
 var client = new MongoClient("mongodb://localhost:27017");
 var database = client.GetDatabase("MyDb");
 var collection = database.GetCollection<Person>("MyCollection");
@@ -79,16 +78,14 @@ var update = Builders<Person >.Update.Set("Address" , "AnhuiAnqing");
 //当然此处使用的都是Person类，你也可以使用BsonDocument;但是在项目开发中基本都是自己定义的类。
 //使用Document的写法:https://docs.mongodb.org/getting-started/csharp/update/
 var result = await collection.UpdateOneAsync(filter, update);
-</p>
 
-## D删除:
-<p>
+## D删除
 var client = new MongoClient("mongodb://localhost:27017");
 var database = client.GetDatabase("MyDb");
 var collection = database.GetCollection<Person>("MyCollection");
 var filter = Builders<Person >.Filter.Eq("Name", "Tommy");
 //使用Document的写法:https://docs.mongodb.org/getting-started/csharp/remove/
 var result = await collection.DeleteManyAsync(filter);
-</p>
+
 
 
