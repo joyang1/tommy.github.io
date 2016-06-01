@@ -7,7 +7,9 @@ author:     "Tommy"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - Android
+    - MongoDB
+	- C#
+	- 数据库
 ---
 
 > “Let's Start. ”
@@ -59,6 +61,7 @@ using MongoDB.Driver;
 public class Person
 
 \{
+
 	 public ObjectId Id { get; set; }
 	 
 	 //此处的ObjectId类型的属性一定要加，不然在查询的时候会报错，因为数据库中在添加文档的时候会自动添加一个ObjectId类型的_id元素，这个是MongoDB数据库的特点。
