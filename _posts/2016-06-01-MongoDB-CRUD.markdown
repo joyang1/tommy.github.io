@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "MongoDB3.2(C#版) CRUD"
+title:      "MongoDB3.2 CRUD"
 subtitle:   " \"Hello MongoDB\""
 date:       2016-06-01 13:41:00
 author:     "Tommy"
