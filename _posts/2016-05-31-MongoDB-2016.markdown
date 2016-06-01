@@ -43,11 +43,12 @@ await collection.InsertOneAsync(new BsonDocument("Name", "Tommy"));
 var list = await collection.Find(new BsonDocument("Name", "Tommy")).ToListAsync();
 
 foreach(var document in list)
-{
+
+\{
 
 	Console.WriteLine(document["Name"]);
 	
-}
+\}
 
 Typed Documents
 
@@ -56,7 +57,8 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 
 public class Person
-{
+
+\{
 	 public ObjectId Id { get; set; }
 	 
 	 //此处的ObjectId类型的属性一定要加，不然在查询的时候会报错，因为数据库中在添加文档的时候会自动添加一个ObjectId类型的_id元素，这个是MongoDB数据库的特点。
@@ -67,7 +69,7 @@ public class Person
 	 
 	 public string Address { get; set; }
 	 
-}
+\}
 
 var client = new MongoClient("mongodb://localhost:27017");
 
@@ -87,11 +89,11 @@ var list = await collection.Find(x => x.Name == "Tommy").ToListAsync();
 
 foreach(var person in list)
 
-{
+\{
 
 	Console.WriteLine(person.Name);
 	
-}
+\}
 
 下面介绍一下U(Update)和D(Delete)
 
