@@ -16,3 +16,23 @@ tags:
 ## Retrieve（检索、查询）
 分两种（一种是插入对象没有自定义; 第二种就是自定义插入对象）
 这两种情况下的区别就是插入数据库中的文档类型不一样，一个是BsonDocument,一个是自定义对象（下面会有例子）,分别使用两种不同的方式
+
+## Create（添加）
+
+Untyped Documents
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+var client = new MongoClient("mongodb://localhost:27017");
+var database = client.GetDatabase("MyDb");
+var collection = client.GetCollection<BsonDocument>("MyCollection");
+
+await collection.InsertOneAsync(new BsonDocument("Name", "Tommy"));
+//如果此处你的函数不是异步的，就不写await，写的话会报错,如果你想写的话就自己写个异步函数，这样的话就没问题了。官网建议使用异步方式。想想也知道异步好一些啊！
+//异步函数写法就是public async void Insert(){}
+var list = await collection.Find(new BsonDocument("Name", "Tommy")).ToListAsync();
+
+foreach(var document in list)
+{
+Console.WriteLine(document["Name"]);
+}
