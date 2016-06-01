@@ -1,20 +1,161 @@
 ---
-layout: default
-title: "About arganzheng"
+layout: page
+title: "About"
+description: "Hey, this is Tommy."
+header-img: "img/about-bg.jpg"
 ---
 
-<div class="container">
-  <div id="post">
+<!-- Language Selector -->
+<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select>
 
-    <h1>About arganzheng</h1>
+<!-- Chinese Version -->
+<div class="zh post-container">
 
-    <p>
-      <ul>
-	<li><a href='https://github.com/arganzheng'>My email: arganzheng@gmail.com</a></li>
-	<li><a href='https://github.com/arganzheng'>My github: https://github.com/arganzheng</a></li>
-	<li><a href='http://weibo.com/argan1985'>My Weibo: http://weibo.com/arganzheng</a></li>
-      </ul>
-    </p>
+    <!--copied from markdown -->
+    <blockquote><p>写写代码，做做设计，看看产品。<br>
+    世界那么大，我想去看看。</p></blockquote>
 
-  </div>
+    <p>Hi，我是<strong>杨挺</strong>，程序员 &amp; 设计师，<a href="http://dlpu.edu.cn/">大连工业大学</a> · 网络工程 2012 级；
+    目前AvePoint软件研发工程师，SharePoint App开发</p>
+
+    <p>一些作品和开源项目，👉 戳 <a href="/portfolio">Portfolio</a> 与 <a href="http://github.com/joyang1">Github</a>；除了在博客写点东西外，我也是 <a href="http://www.gfansub.com/">GDG 字幕组</a>的译者之一、<a href="http://zhuanlan.zhihu.com/FrontendMagazine">前端外刊评论 · 知乎专栏</a>的维护译者之一、<a href="http://zhuanlan.zhihu.com/huxblog">知乎专栏 · 一生想做浪漫极客</a> 的创办者。</p>
+
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="http://huangxuan.me/2015/12/28/css-sucks-2015/">CSS Still Sucks 2015 · 2015</a></li>
+    <li><a href="http://huangxuan.me/2015/07/09/js-module-7day/">JavaScript 模块化七日谈 · 2015</a></li>
+    </ul>
+
+
+    <h5>Resumes</h5>
+
+    <ul>
+    <li><a href="/attach/2016_Hux_en_SE.pdf">2016_Hux_en_SE &amp; FE</a></li>
+    <li><a href="attach/2016_Hux_en_PD.pdf">2016_Hux_en_PD &amp; UX</a></li>
+    </ul>
+
 </div>
+
+<!-- English Version -->
+<div class="en post-container">
+    <blockquote><p>Yet another Frontend Engineer. <br>
+    Yet another Lifelong Designer.</p></blockquote>
+
+    <p>My name is <strong>Yang Ting(杨挺)</strong>，you can call me nickname <strong>Tommy</strong>. I studied Network Engineering in <a href="https://en.wikipedia.org/wiki/Communication_University_of_China">Dalian Polytechic University</a>.</p>
+
+    <p>Some of my projects is put on my <a href="{{site.baseurl}}/portfolio">Portfolio 👉</a> and <a href="http://github.com/huxpro">Github 👉</a>. I am also translator of <a href="http://www.gfansub.com/">GDG China</a>, maintainer of <a href="http://zhuanlan.zhihu.com/FrontendMagazine">Frontend Magazine</a> and owner of <a href="http://zhuanlan.zhihu.com/huxblog">Lifelong Romantic Geek</a></p>
+
+
+    <h5>Resumes</h5>
+
+    <ul>
+    <li><a href="{{site.baseurl}}/attach/2016_Hux_en_SE.pdf">2016_Hux_en_SE &amp; FE</a></li>
+    <li><a href="{{site.baseurl}}/attach/2016_Hux_en_PD.pdf">2016_Hux_en_PD &amp; UX</a></li>
+    </ul>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "tommyblog" %}
+        data-thread-id="0301294d97fe234d7593ac208a572cba"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Tommy
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}

@@ -1,4 +1,89 @@
+# Site settings
+title: Tommy Yang’s Blog
+SEOTitle: 杨挺的博客 | Tommy's Blog
+header-img: /img/home-bg.jpg
+email: tingzai.yang@gmail.com
+description: "关于后台与设计、移动开发 | 杨挺，Web & Mobile Lover，Software R&D Engineer | 这里是 @Tommy杨挺 的个人博客，与你一起发现更大的世界。"
+keyword: "杨挺, Tommy杨挺, Tommy, 鬼栈, tingyang , @tingyang, 杨挺的博客, Tommy Blog, 博客, 个人网站, 互联网, 后台, 设计, 产品"
+url: "http://joyang1.github.io/tommy.github.io/"              # your host, for absolute URL
+baseurl: "/tommy.github.io"                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     tommytingyang
+zhihu_username:     ting-yang-31
+github_username:    joyang1
+#twitter_username:  huxpro
+facebook_username:  tingzai.yang
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
-permalink: /posts/:title.html
-extensions: [smart]
+paginate: 10
+exclude: ["feed.xml",less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate, jekyll-feed]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+duoshuo_username: tommyblog
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 5e9fe3be1238e61857fb8f1093caf03a
+# Google Analytics
+ga_track_id: 'UA-78618314-1'            # Format: UA-xxxxxx-xx
+ga_domain: github.io
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "写写代码，做做项目，看看产品。世界那么大，我想去看看。"
+sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Friends
+friends: [
+    {
+        title: "tommy 博客园 博客",
+        href: "http://cnblogs.com/joyang"
+    }
+]
