@@ -12,11 +12,11 @@ baseurl: "/tommy.github.io"                             # for example, '/blog' i
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
+weibo_username:     tommytingyang
+zhihu_username:     tommy
+github_username:    joyang1
 #twitter_username:  huxpro
-facebook_username:  huxpro
+facebook_username:  tingzai.yang
 # linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -51,7 +51,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: huxblog
+duoshuo_username: yangting
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
@@ -60,10 +60,10 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+ba_track_id: 5e9fe3be1238e61857fb8f1093caf03a
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+ga_track_id: 'UA-78618314-1'            # Format: UA-xxxxxx-xx
+ga_domain: github.io
 
 
 
