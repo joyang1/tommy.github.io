@@ -1,4 +1,4 @@
-markdown: rdiscount
-pygments: true
+highlighter: rouge
+permalink: pretty
 permalink: /posts/:title.html
 extensions: [smart]
