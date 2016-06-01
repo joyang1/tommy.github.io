@@ -1,8 +1,8 @@
-﻿---
+---
 layout:     post
 title:      "MongoDB3.2(C#版) CRUD"
 subtitle:   " \"Hello MongoDB\""
-date:       2015-06-01 13:41:00
+date:       2016-06-01 13:41:00
 author:     "Tommy"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
