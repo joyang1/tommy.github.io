@@ -1,8 +1,8 @@
-#Hux Blog
+#Tommy Blog
 
-###[View Live Hux Blog &rarr;](http://huxpro.github.io)
+###[View Live Tommy Blog &rarr;](http://joyang1.github.io/tommy.github.io/)
 
-![](http://huangxuan.me/img/blog-desktop.jpg)
+![](http://huangxuan.me/img/*.jpg)
 
 
 ### "Page Build Warning" email
@@ -15,16 +15,6 @@ In this mail, github told us:
 
 So, just edit `_config.yml`, find `highlighter: pygments`, change it to `highlighter: rouge` and the warning will be gone.
 
-
-## Boilerplate (beta)
-
-Want to clone a boilerplate instead of my buzz blog? Here comes this!  
-
-```
-$ git clone git@github.com:Huxpro/huxblog-boilerplate.git
-```
-
-**[View Boilerplate Here &rarr;](http://huangxuan.me/huxblog-boilerplate/)**
 
 
 ## Translation
@@ -151,7 +141,7 @@ layout:     post
 title:      "Hello 2015"
 subtitle:   "Hello World, Hello Blog"
 date:       2015-01-29 12:00:00
-author:     "Hux"
+author:     "tommy"
 header-img: "img/post-bg-2015.jpg"
 tags:
     - Life
@@ -161,7 +151,7 @@ tags:
 
 #### SideBar
 
-![](http://huangxuan.me/img/blog-sidebar.jpg)
+![](http://blog.tommyyang.cn/img/blog-sidebar.jpg)
 
 Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules. You can enable *(it is default enable)* this feature by simply config:
 
@@ -208,12 +198,8 @@ You can just add your friends information in `_config.yml` with a familiar JSON 
 # Friends
 friends: [
     {
-        title: "Foo Blog",
-        href: "http://foo.github.io/"
-    },
-    {
-        title: "Bar Blog",
-        href: "http://bar.github.io"
+        title: "Tommy Blog",
+        href: "http://joyang1.github.io/tommy.github.io/"
     }
 ]
 ```
@@ -230,7 +216,7 @@ Under the hood, a `iframe` is used to include webpage from outer source, so the 
 ```
 ---
 layout:     keynote
-iframe:     "http://huangxuan.me/js-module-7day/"
+iframe:     "http://blog.tommyyang.cn/js-module-7day/"
 ---
 ```
 
@@ -267,7 +253,7 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+ga_domain: blog.tommyyang.cn
 ```
 
 Just checkout the code offered by Google/Baidu, and copy paste here, all the rest is already done for you.
