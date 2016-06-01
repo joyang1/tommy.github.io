@@ -14,6 +14,7 @@ tags:
 
 > “Let's Start. ”
 
+
 ## Retrieve(检索、查询)：
 分两种(一种是插入对象没有自定义; 第二种就是自定义插入对象)
 这两种情况下的区别就是插入数据库中的文档类型不一样，一个是BsonDocument,一个是自定义对象(下面会有例子),分别使用两种不同的方式
@@ -83,3 +84,5 @@ var collection = database.GetCollection<Person>("MyCollection");
 var filter = Builders<Person >.Filter.Eq("Name", "Tommy");
 //使用Document的写法:https://docs.mongodb.org/getting-started/csharp/remove/
 var result = await collection.DeleteManyAsync(filter);
+
+
