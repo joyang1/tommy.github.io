@@ -8,7 +8,7 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 生活
-	- Life
+	- 前端开发
 ---
 
 > “Yeah It's on. ”
