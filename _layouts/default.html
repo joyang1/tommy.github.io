@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<style type="text/css"> 
+#top_div{ 
+    position:fixed; 
+    bottom:80px; 
+    right:0; 
+    display:none; 
+} 
+</style> 
+<a name="top"><a> 
+<div id="top_div"><a href="#top">top</a></div> 
 
 {% include head.html %}
 
@@ -20,3 +30,16 @@
 </body>
 
 </html>
+
+<script type="text/javascript"> 
+window.onscroll = function(){ 
+    var t = document.documentElement.scrollTop || document.body.scrollTop;  
+    var top_div = document.getElementById( "top_div" ); 
+    if( t >= 10 ) { 
+        top_div.style.display = "inline"; 
+    } else { 
+        top_div.style.display = "none"; 
+    } 
+} 
+
+</script> 
