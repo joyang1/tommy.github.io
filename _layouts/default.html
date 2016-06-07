@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<style type="text/css"> 
-#top_div{ 
-    position:fixed; 
-    bottom:80px; 
-    right:10px; 
-    display:none;
-} 
-</style> 
 <a name="top"><a> 
-<div id="top_div"><a href="#top"><img style="cursor: pointer;" src="/img/totop.jpg"></a></div> 
+<div style=" position:fixed; bottom:80px; right:10px; display:none;"><a href="#top"><img style="cursor: pointer;" src="/img/totop.jpg"></a></div> 
 
 {% include head.html %}
 
@@ -35,7 +27,7 @@
 window.onscroll = function(){ 
     var t = document.documentElement.scrollTop || document.body.scrollTop;  
     var top_div = document.getElementById( "top_div" ); 
-    if( t >= 10 ) { 
+    if( t >= 0 ) { 
         top_div.style.display = "inline"; 
     } else { 
         top_div.style.display = "none"; 
