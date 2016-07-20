@@ -18,6 +18,13 @@
 </div> 
 <div id="qqchat">
 	<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1173870805&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1173870805:52" alt="欢迎交流" title="欢迎交流"/></a>
+	<form action="https://shenghuo.alipay.com/send/payment/fill.htm" method="POST" target="_blank" accept-charset="GBK">
+		<input name="optEmail" type="hidden" value="18365103567" />
+		<input name="payAmount" type="hidden" value="默认的捐赠金额" />
+		<input id="title" name="title" type="hidden" value="默认显示的付款说明" />
+		<input name="memo" type="hidden" value="备注" />
+		<input name="pay" type="image" value="转账" src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png" />
+	</form>
 </div>
 
 {% include head.html %}
