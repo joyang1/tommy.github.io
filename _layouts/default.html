@@ -4,7 +4,7 @@
 		.png{
 			cursor: pointer !important;
 		}
-		.back-to-top-wrap {
+		#back-to-top-wrap {
 			line-height: 1;
 			position: fixed;
 			z-index: 44444;
@@ -22,7 +22,7 @@
 	</style>
 
 <a name="top-link"><a> 
-<div class="back-to-top-wrap" style="display: block;"><a href="#top-link" class="back-to-top">Back to<br>top</a></div>
+<div id="back-to-top-wrap" style="display: block;"><a href="#top-link" class="back-to-top">Back to<br>top</a></div>
 
 {% include head.html %}
 
@@ -47,7 +47,7 @@
 <script type="text/javascript"> 
 window.onscroll = function(){ 
     var t = document.documentElement.scrollTop || document.body.scrollTop;  
-    var top_div = document.getElementById( "top_div" ); 
+    var top_div = document.getElementById( "back-to-top-wrap" ); 
     if( t >= 2 ) { 
         top_div.style.display = "inline"; 
     } else { 
