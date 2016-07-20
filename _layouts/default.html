@@ -10,7 +10,7 @@
 			z-index: 44444;
 			top: 80%;
 			right: 0;
-			display: none !important;
+			display: none;
 			width: 66px;
 			min-height: 70px;
 			margin-top: -75px;
@@ -31,7 +31,7 @@
 	</style>
 
 <a name="top-link"><a> 
-<div id="back-to-top-wrap" style="display: block;"><a href="#top-link" class="back-to-top">Back to<br>top</a></div>
+<div id="back-to-top-wrap"><a href="#top-link" class="back-to-top">Back to<br>top</a></div>
 
 {% include head.html %}
 
@@ -58,9 +58,9 @@ window.onscroll = function(){
     var t = document.documentElement.scrollTop || document.body.scrollTop;  
     var top_div = document.getElementById( "back-to-top-wrap" ); 
     if( t >= 2 ) { 
-        top_div.style.display = "block !important"; 
+        top_div.style.display = "block"; 
     } else { 
-        top_div.style.display = "none !important"; 
+        top_div.style.display = "none"; 
     } 
 } 
 window.tctipConfig = {
