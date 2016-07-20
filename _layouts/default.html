@@ -58,9 +58,9 @@ window.onscroll = function(){
     var t = document.documentElement.scrollTop || document.body.scrollTop;  
     var top_div = document.getElementById( "back-to-top-wrap" ); 
     if( t >= 2 ) { 
-        top_div.style.display = "inline"; 
+        top_div.style.display = "block !important"; 
     } else { 
-        top_div.style.display = "none"; 
+        top_div.style.display = "none !important"; 
     } 
 } 
 window.tctipConfig = {
