@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 	<style type="text/css">
-		#top_div{
-			position:fixed;
-			bottom:80px; 
-			right:10px; 
-			display:none;
-		}
 		.png{
 			cursor: pointer !important;
 		}
+		.back-to-top-wrap {
+			line-height: 1;
+			position: fixed;
+			z-index: 44444;
+			top: 80%;
+			right: 0;
+			display: none;
+			width: 66px;
+			min-height: 70px;
+			margin-top: -75px;
+			padding: 35px 0 10px;
+			text-align: center;
+			background: url(images/icon-backtotop.png) 50% 8px no-repeat;
+			background-color: rgba(240,240,240,.7);
+		}
 	</style>
 
-<a name="top"><a> 
-<div id="top_div"><a href="#top"><img style="cursor: pointer;" src="/img/bg_top.png"></a>
-</div> 
+<a name="top-link"><a> 
+<div class="back-to-top-wrap" style="display: block;"><a href="#top-link" class="back-to-top">Back to<br>top</a></div>
 
 {% include head.html %}
 
