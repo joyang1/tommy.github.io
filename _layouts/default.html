@@ -8,6 +8,7 @@
 			display:none;
 		}
 	</style>
+
 <a name="top"><a> 
 <div id="top_div"><a href="#top"><img style="cursor: pointer;" src="/img/bg_top.png"></a>
 </div> 
@@ -42,5 +43,17 @@ window.onscroll = function(){
         top_div.style.display = "none"; 
     } 
 } 
-
+window.tctipConfig = {
+			staticPrefix: "http://static.tctip.com",
+			buttonImageId: 5,
+			buttonTip:	"打赏",
+			list:{
+				/**使用系统默认支付方式，传入account**/
+				bitcoin: { account: "18365103567"},
+				/**使用系统默认支付方式，传入qrimg**/
+				weixin:{qrimg: "http://littlebtc.com/images/yeshen.png"},
+			}
+		};
+	</script>
+	<script src="http://static.tctip.com/js/tctip.min.js"></script>
 </script> 
