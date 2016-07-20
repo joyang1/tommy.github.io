@@ -45,8 +45,12 @@ window.onscroll = function(){
 } 
 window.tctipConfig = {
 			staticPrefix: "http://static.tctip.com",
+			//图片路径前缀，用来修订图片相对路径,默认为""
+			imagePrefix:  "",
+			//css路径前缀，用来修订css相对路径,默认为""
+			cssPrefix:	  "",
 			buttonImageId: 5,
-			buttonTip:	"打赏",
+			buttonTip:	"dashang",
 			list:{
 				/**使用系统默认支付方式，传入account**/
 				bitcoin: { account: "18365103567"},
