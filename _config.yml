@@ -85,5 +85,9 @@ friends: [
     {
         title: "tommy 博客园 博客",
         href: "http://cnblogs.com/joyang"
+    },
+    {
+        title: "一只不愿敲代码的程序员",
+        href: "https://www.razeencheng.com"
     }
 ]
