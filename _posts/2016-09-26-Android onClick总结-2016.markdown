@@ -85,7 +85,7 @@ public void button4(View v){<br/>
 		android:textSize="18sp"<br/>
 		android:layout_below="@id/display"<br/>
 		android:layout_width="wrap_content"<br/>
-		android:layout_height="wrap_content"/>
+		android:layout_height="wrap_content"/><br/>
 
 <Button<br/>
 		android:id="@+id/button2"<br/>
@@ -93,7 +93,7 @@ public void button4(View v){<br/>
 		android:textSize="18sp"<br/>
 		android:layout_below="@id/button1"<br/>
 		android:layout_width="wrap_content"<br/>
-		android:layout_height="wrap_content"/>
+		android:layout_height="wrap_content"/><br/>
 
 <Button<br/>
 		android:id="@+id/button3"<br/>
@@ -101,7 +101,7 @@ public void button4(View v){<br/>
 		android:textSize="18sp"<br/>
 		android:layout_below="@id/button2"<br/>
 		android:layout_width="wrap_content"<br/>
-		android:layout_height="wrap_content"/>
+		android:layout_height="wrap_content"/><br/>
 
 <Button<br/>
 		android:id="@+id/button4"<br/>
@@ -111,6 +111,6 @@ public void button4(View v){<br/>
 		android:onClick="button4"<br/>
 		android:layout_width="wrap_content"<br/>
 		android:layout_height="wrap_content"/><br/>
-</div>
+</div><br/>
 
 <p>源码下载地址: <a href="https://github.com/joyang1/ButtonClickDemo/" target="_blank" title="ButtonDemo">查看</a> </p>
