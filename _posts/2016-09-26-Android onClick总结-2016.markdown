@@ -69,7 +69,7 @@ public void button4(View v){<br/>
             android:textSize="24sp"<br/>
             android:gravity="center_horizontal"<br/>
             android:layout_width="wrap_content"<br/>
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"/><br/>
 
 <TextView<br/>
 		android:id="@+id/display"<br/>
@@ -79,7 +79,7 @@ public void button4(View v){<br/>
 		android:layout_width="wrap_content"<br/>
 		android:layout_height="wrap_content"/><br/>
 		
-<Button
+<Button<br/>
 		android:id="@+id/button1"<br/>
 		android:text="方式一"<br/>
 		android:textSize="18sp"<br/>
