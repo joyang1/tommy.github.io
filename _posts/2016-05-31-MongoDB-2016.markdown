@@ -26,7 +26,7 @@ tags:
 
 Untyped Documents
 
-\using MongoDB.Bson;
+using MongoDB.Bson;
 
 using MongoDB.Driver;
 
@@ -50,11 +50,11 @@ foreach(var document in list)
 
 	Console.WriteLine(document["Name"]);
 	
-\}
+}
 
 Typed Documents
 
-\using MongoDB.Bson;
+using MongoDB.Bson;
 
 using MongoDB.Driver;
 
@@ -96,14 +96,14 @@ foreach(var person in list)
 
 	Console.WriteLine(person.Name);
 	
-\}
+}
 
 下面介绍一下U(Update)和D(Delete)
 
 
 ## U更新
 
-\var client = new MongoClient("mongodb://localhost:27017");
+var client = new MongoClient("mongodb://localhost:27017");
 
 var database = client.GetDatabase("MyDb");
 
@@ -117,12 +117,12 @@ var update = Builders<Person >.Update.Set("Address" , "AnhuiAnqing");
 
 //使用Document的写法:https://docs.mongodb.org/getting-started/csharp/update/
 
-\var result = await collection.UpdateOneAsync(filter, update);
+var result = await collection.UpdateOneAsync(filter, update);
 
 
 ## D删除
 
-\var client = new MongoClient("mongodb://localhost:27017");
+var client = new MongoClient("mongodb://localhost:27017");
 
 var database = client.GetDatabase("MyDb");
 
@@ -132,4 +132,4 @@ var filter = Builders<Person >.Filter.Eq("Name", "Tommy");
 
 //使用Document的写法:https://docs.mongodb.org/getting-started/csharp/remove/
 
-\var result = await collection.DeleteManyAsync(filter);
+var result = await collection.DeleteManyAsync(filter);
