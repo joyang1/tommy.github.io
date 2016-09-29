@@ -14,15 +14,18 @@ tags:
 
 > “Let's Start. ”
 
-# SharePoint Client API Search user  四种方法
 
 在近期的项目中，遇到了一个问题 ，就是关于通过SharePoint Client API 去获取office35里面的用户信息的问题。
  
 项目的前期都是使用同一个方法，也没有遇到任何问题，但是使用一下方法的前提是需要在SharePoint App的AppManifest.xml文件中配置如下权限：
-<AppPermissionRequest Scope="http://sharepoint/search" Right="QueryAsUserIgnoreAppPrincipal" />
 
-然后使用如下方法：
-## 方法一： SearchAccountNamesByKeyWord
+```sh
+<AppPermissionRequest Scope="http://sharepoint/search" Right="QueryAsUserIgnoreAppPrincipal" />
+```
+
+然后使用如下方法
+
+## 方法一 SearchAccountNamesByKeyWord
 
 ```sh
 public List<String> SearchAccountNamesByKeyWord(String key)
