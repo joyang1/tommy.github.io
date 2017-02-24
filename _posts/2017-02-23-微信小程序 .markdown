@@ -2,7 +2,7 @@
 layout:     post
 title:      "微信小程序入门"
 subtitle:   " \"Hello World之微信小程序\""
-date:       2017-02-14 18:41:00
+date:       2017-02-23 16:41:00
 author:     "Tommy"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
