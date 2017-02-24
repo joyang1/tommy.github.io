@@ -22,8 +22,8 @@ tags:
 ## Create Binary Tree Using Java
 
 ```sh
-		//arrs为放入到树节点的数据，demo中将int类型的数据置入节点中
-		public List<TreeNode> initTree(int[] arrs) {
+	//arrs为放入到树节点的数据，demo中将int类型的数据置入节点中
+	public List<TreeNode> initTree(int[] arrs) {
 		List<TreeNode> nodes = new ArrayList<TreeNode>();
 		for (int data : arrs) {
 			nodes.add(new TreeNode(data));
@@ -41,7 +41,7 @@ tags:
 			nodes.get(lastParentIndex).rightNode = nodes.get(lastParentIndex * 2 + 2);
 		}
 		return nodes;
-}
+	}
 ```
 上述方法中提到的TreeNode对象在code(src.test.TreeNode)中可以查看。
 
