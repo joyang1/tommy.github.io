@@ -112,7 +112,7 @@ public List<TreeNode> initTree(int[] arrs) {
 1. 将代码clone到本地，使用eclipse导入代码，导入的时候项目的类型选择"git project"。
 2. 找到src/test/RunTest.java，右键 run as java appalication.
 
-### 下载地址:
+### 下载地址
 [下载地址(BinaryTree)](https://github.com/joyang1/BinaryTree)
 
 demo中设置的二叉树的结构为:<br />
