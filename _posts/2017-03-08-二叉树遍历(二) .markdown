@@ -130,7 +130,7 @@ tags:
 ### 下载地址
 [下载地址(BinaryTree)](https://github.com/joyang1/BinaryTree)
 
-###二叉树结构
+### 二叉树结构
 Demo中设置的二叉树的结构为:<br />
 <img src = "/img/binary-tree.png">
 
