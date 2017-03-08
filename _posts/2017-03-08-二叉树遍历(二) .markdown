@@ -1,0 +1,139 @@
+---
+layout:     post
+title:      "二叉树遍历"
+subtitle:   " \"Binary Tree\""
+date:       2017-03-08 09:55:00
+author:     "Tommy"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - 二叉树
+---
+
+> 二叉树遍历，Let's start!
+
+上篇文章中介绍了二叉树的创建和遍历，其中遍历使用的是递归的方式。这篇文章我们介绍一下使用循环来实现对树的先序、中序、后序遍历。
+
+## Create Binary Tree Using Java
+
+如何创建二叉树我们在上篇文章已经介绍了，此处就不做过多阐述。
+
+## 三种遍历方式
+
+(1). 先序遍历<br />
+(2). 中序遍历<br />
+(3). 后序遍历<br />
+三种遍历方式，也就是遍历的顺序不一样。<br />
+先序遍历: "根左右"，遍历的顺序: 根节点->左节点->右节点。<br />
+中序遍历: "左根右"，遍历的顺序: 左节点->根节点->右节点。<br />
+后序遍历: "左右根"，遍历的顺序: 左节点->右节点->根节点。<br />
+
+由于该篇文章中使用的是循环来实现遍历，不是递归，所以我们需要来存储我们需要输出的节点，相信学习过数据结构的同学都知道树的存储输出可以使用pop，push来实现，也就是使用栈来实现树的遍历。在java中可以使用LinkedList来实现栈，
+详细的介绍可以看下LinkedList类的源码。
+
+### 先序遍历
+
+```sh
+	/*
+	 * 先序遍历二叉树： 根左右
+	 * 
+	 * 使用循环
+	 * 
+	 * @param node
+	 *       遍历的节点
+	 * */
+	public void preOrderTraverseByWhile(TreeNode node){
+		LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
+		stack.push(node);
+		TreeNode currentNode;
+		while (!stack.isEmpty()) {
+			currentNode = stack.pop();
+			System.out.print(currentNode.data + " ");
+			if(currentNode.rightNode != null){
+				stack.push(currentNode.rightNode);
+			}
+			if (currentNode.leftNode != null) {
+				stack.push(currentNode.leftNode);
+			}
+		}
+	}
+```
+
+### 中序遍历
+
+```sh
+	/*
+	 * 中序遍历二叉树： 左根右
+	 * 
+	 * 使用循环
+	 * 
+	 * @param node
+	 *       遍历的节点
+	 * */
+	public void inOrderTraverseByWhile(TreeNode node){
+		LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
+		TreeNode currentNode = node;
+		while (currentNode != null || !stack.isEmpty()) {
+			while(currentNode != null){
+				stack.push(currentNode);
+				currentNode = currentNode.leftNode;
+			}
+			if(!stack.isEmpty()){
+				currentNode = stack.pop();
+				System.out.print(currentNode.data + "");
+				//输出完当前节点后看看当前节点的右孩子是否存在，存在即让该节点的右孩子入栈，即上面说到的 根节点->右节点
+				currentNode = currentNode.rightNode;
+			}
+		}
+	}
+```
+### 后序遍历
+
+```sh
+	/*
+	 * 后序遍历二叉树： 左右根
+	 * 
+	 *  使用循环
+	 * 
+	 * @param node
+	 *       遍历的节点
+	 * */
+	public void afterOrderTraverseByWhile(TreeNode node){
+		LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
+		TreeNode rightNode = null;
+		TreeNode currentNode = node;
+		while (currentNode != null || !stack.isEmpty()) {
+			while(currentNode != null){
+				stack.push(currentNode);
+				currentNode = currentNode.leftNode;
+			}
+			currentNode = stack.pop();
+			//当上一个访问的结点是右孩子或者当前结点没有右孩子则访问当前结点
+			while(currentNode != null && (currentNode.rightNode == null || currentNode.rightNode == rightNode)){
+				System.out.print(currentNode.data + " ");
+				rightNode = currentNode;
+				if(stack.isEmpty()){
+					return;
+				}
+				currentNode = stack.pop();
+			}
+			stack.push(currentNode);
+			currentNode = currentNode.rightNode;
+		}
+	}
+```
+
+## How to run code
+1. 将代码clone到本地，使用eclipse导入代码，导入的时候项目的类型选择"git project"。
+2. 找到src/test/RunTest.java，右键 run as java appalication.
+
+### 下载地址
+[下载地址(BinaryTree)](https://github.com/joyang1/BinaryTree)
+
+###二叉树结构
+Demo中设置的二叉树的结构为:<br />
+<img src = "/img/binary-tree.png">
+
+RunTest结果如下:<br />
+<img src = "/img/binarytree-xunhuanresult.png">
+
