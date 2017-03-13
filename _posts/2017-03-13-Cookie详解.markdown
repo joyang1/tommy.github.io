@@ -72,6 +72,7 @@ tags:
 	法二: 将项目中WebContent中的内容拷入你的Tomccat服务器下的webapps目录下你建的站点名，然后启动tomcat服务器,
 	      在浏览器中输入: http://localhost:8080/站点名，即可访问<br/>
 	Tomcat目录下的webapps目录如下:
+
 <img src = "/img/tomcat.png">
 
 ## 站点页面展示
