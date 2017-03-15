@@ -58,5 +58,5 @@ Session在Web开发环境下的语义又有了新的扩展，它的含义是指�
 ## 站点页面展示
 
 ### 下载地址
-[下载地址(CookieDemo)](https://github.com/joyang1/SessionDemo)
+[下载地址(SessionDemo)](https://github.com/joyang1/SessionDemo)
 
