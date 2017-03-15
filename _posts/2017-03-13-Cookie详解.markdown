@@ -40,7 +40,7 @@ tags:
 	
 ## Cookie的原理
 	底层的实现原理： WEB服务器通过在HTTP响应消息中增加
-	                 Set-Cookie响应头字段将Cookie信息发送给浏览器，
+	                Set-Cookie响应头字段将Cookie信息发送给浏览器，
 	浏览器则通过在HTTP请求消息中增加Cookie请求头字段将Cookie回传给WEB服务器。
 
 ## Cookie的传送过程示意图 
@@ -65,32 +65,32 @@ tags:
 	2. 设置最大时效
 	3. 将Cookie放入到HTTP响应报头
          - 如果创建了一个cookie，并将他发送到浏览器，
-		   默认情况下它是一个会话级别的cookie; 
-		   存储在浏览器的内存中，用户退出浏览器之后被删除。
-	       若希望浏览器将该cookie存储在磁盘上，则需要使用maxAge，
-	       并给出一个以秒为单位的时间。
-		   将最大时效设为0则是命令浏览器删除该cookie。
+           默认情况下它是一个会话级别的cookie; 
+           存储在浏览器的内存中，用户退出浏览器之后被删除。
+	   若希望浏览器将该cookie存储在磁盘上，则需要使用maxAge，
+	   并给出一个以秒为单位的时间。
+           将最大时效设为0则是命令浏览器删除该cookie。
          - 发送cookie需要使用HttpServletResponse的addCookie方法，
-		   将cookie插入到一个 Set-Cookie　HTTP响应报头中。
-	       由于这个方法并不修改任何之前指定的Set-Cookie报头，
-		   而是创建新的报头，因此将这个方法称为是addCookie，而非setCookie。
+           将cookie插入到一个 Set-Cookie　HTTP响应报头中。
+	   由于这个方法并不修改任何之前指定的Set-Cookie报头，
+           而是创建新的报头，因此将这个方法称为是addCookie，而非setCookie。
 
 ## Cookie的读取
 	1. 调用request.getCookies要获取浏览器发送来的cookie，
 	   需要调用HttpServletRequest的getCookies方法，
 	   这个调用返回Cookie对象的数组，对应由HTTP请求中Cookie报头输入的值。
-    2. 对数组进行循环，调用每个cookie的getName方法，
-       直到找到感兴趣的cookie为止。
+        2. 对数组进行循环，调用每个cookie的getName方法，
+           直到找到感兴趣的cookie为止。
     
 ## 会话cookie和持久cookie的区别 
 	1. 如果不设置过期时间，则表示这个cookie生命周期为浏览器会话期间，
 	   只要关闭浏览器窗口，cookie就消失了。
 	   这种生命期为浏览器会话期的cookie被称为会话cookie。
 	   会话cookie一般不保存在硬盘上而是保存在内存里。
-    2. 如果设置了过期时间，浏览器就会把cookie保存到硬盘上，
+        2. 如果设置了过期时间，浏览器就会把cookie保存到硬盘上，
 	   关闭后再次打开浏览器，这些cookie依然有效直到超过设定的过期时间。 
 	   设置过期时间: setMaxAge(param) param为具体的时间，单位为秒。
-    3. 存储在硬盘上的cookie可以在不同的浏览器进程间共享，
+        3. 存储在硬盘上的cookie可以在不同的浏览器进程间共享，
 	   比如两个IE窗口。而对于保存在内存的cookie，不同的浏览器有不同的处理方式。
 
 ## How to run code
