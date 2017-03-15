@@ -15,22 +15,14 @@ tags:
 
 ## Cookie的由来
 
-```sh
-首先我们需要介绍一下，在Web开发过程中为什么会引入Cookie。
-我们知道Http协议是一种无状态协议，
-Web服务器本身不能识别出哪些请求是同一个浏览器发出的，
-浏览器的每一次请求都是完全孤立的。
-即便在Http1.1支持了持续连接，
-担当用户有一段时间没有提交请求时，
-连接也会自动关闭。这时，作为Web服务器，
-必须采用一种机制来唯一标识一个用户，
-同时记录该用户的状态。于是就引入了第一种机制:Cookie机制。
+首先我们需要介绍一下，在Web开发过程中为什么会引入Cookie。我们知道Http协议是一种无状态协议，
+Web服务器本身不能识别出哪些请求是同一个浏览器发出的，浏览器的每一次请求都是完全孤立的。
+即便在Http1.1支持了持续连接，担当用户有一段时间没有提交请求时，连接也会自动关闭。这时，作为Web服务器，
+必须采用一种机制来唯一标识一个用户，同时记录该用户的状态。于是就引入了第一种机制:Cookie机制。
 Cookie机制: 采用的是在客户端保持Http状态的方案。
-```
 	
 ## Cookie的定义即基本介绍
 
-```sh
 Cookie是在浏览器访问WEB服务器的某个资源时，
 由WEB服务器在HTTP响应消息头中附带传送给浏览器的一个小文本文件。
 1. 一旦WEB浏览器保存了某个Cookie，
@@ -42,63 +34,42 @@ Cookie是在浏览器访问WEB服务器的某个资源时，
    一个WEB浏览器也可以存储多个WEB站点提供的Cookie。
 4. 浏览器一般只允许存放300个Cookie，
    每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB。
-```
 	
 ## Cookie的原理
 
-```sh
-底层的实现原理： WEB服务器通过在HTTP响应消息中增加
-		Set-Cookie响应头字段将Cookie信息发送给浏览器，
-浏览器则通过在HTTP请求消息中增加Cookie请求头字段将Cookie回传给WEB服务器。
-```
+底层的实现原理： WEB服务器通过在HTTP响应消息中增加Set-Cookie响应头字段将Cookie信息发送给浏览器，
+               浏览器则通过在HTTP请求消息中增加Cookie请求头字段将Cookie回传给WEB服务器。
 
 ## Cookie的传送过程示意图 
 <img src = "/img/cookie/processofcookie.jpg">
 	
 ## Cookie 在JavaWeb中的使用
 
-```sh
-1. Servlet API中提供了一个javax.servlet.http.Cookie类来封装Cookie信息，
-      它包含有生成Cookie信息和提取Cookie信息的各个属性的方法。
+1. Servlet API中提供了一个javax.servlet.http.Cookie类来封装Cookie信息，它包含有生成Cookie信息和提取Cookie信息的各个属性的方法。
 2. Cookie类的方法：
       - 构造方法： public Cookie(String name,String value)
       - getName方法 
       - setValue与getValue方法 
       - setMaxAge与getMaxAge方法 
       - setPath与getPath方法
-3. HttpServletResponse接口中定义了一个addCookie方法，
-      它用于在发送给浏览器的HTTP响应消息中增加一个Set-Cookie响应头字段。
-4. HttpServletRequest接口中定义了一个getCookies方法，
-      它用于从HTTP请求消息的Cookie请求头字段中读取所有的Cookie项。
-```
+3. HttpServletResponse接口中定义了一个addCookie方法，它用于在发送给浏览器的HTTP响应消息中增加一个Set-Cookie响应头字段。
+4. HttpServletRequest接口中定义了一个getCookies方法，它用于从HTTP请求消息的Cookie请求头字段中读取所有的Cookie项。
 
 ## Cookie的发送 
 
-```sh
-	1. 创建Cookie对象
-	2. 设置最大时效
-	3. 将Cookie放入到HTTP响应报头
-         - 如果创建了一个cookie，并将他发送到浏览器，
-           默认情况下它是一个会话级别的cookie; 
-           存储在浏览器的内存中，用户退出浏览器之后被删除。
-	   若希望浏览器将该cookie存储在磁盘上，则需要使用maxAge，
-	   并给出一个以秒为单位的时间。
-           将最大时效设为0则是命令浏览器删除该cookie。
-         - 发送cookie需要使用HttpServletResponse的addCookie方法，
-           将cookie插入到一个 Set-Cookie　HTTP响应报头中。
-	   由于这个方法并不修改任何之前指定的Set-Cookie报头，
-           而是创建新的报头，因此将这个方法称为是addCookie，而非setCookie。
-```
+1. 创建Cookie对象
+2. 设置最大时效
+3. 将Cookie放入到HTTP响应报头
+ - 如果创建了一个cookie，并将他发送到浏览器，默认情况下它是一个会话级别的cookie; 存储在浏览器的内存中，用户退出浏览器之后被删除。
+   若希望浏览器将该cookie存储在磁盘上，则需要使用maxAge，并给出一个以秒为单位的时间。将最大时效设为0则是命令浏览器删除该cookie。
+ - 发送cookie需要使用HttpServletResponse的addCookie方法，将cookie插入到一个 Set-Cookie　HTTP响应报头中。
+   由于这个方法并不修改任何之前指定的Set-Cookie报头，而是创建新的报头，因此将这个方法称为是addCookie，而非setCookie。
 
 ## Cookie的读取
 
-```sh
-1. 调用request.getCookies要获取浏览器发送来的cookie，
-   需要调用HttpServletRequest的getCookies方法，
+1. 调用request.getCookies要获取浏览器发送来的cookie，需要调用HttpServletRequest的getCookies方法，
    这个调用返回Cookie对象的数组，对应由HTTP请求中Cookie报头输入的值。
-2. 对数组进行循环，调用每个cookie的getName方法，
-   直到找到感兴趣的cookie为止。
-```
+2. 对数组进行循环，调用每个cookie的getName方法，直到找到感兴趣的cookie为止。
     
 ## 会话cookie和持久cookie的区别 
 
