@@ -14,53 +14,67 @@ tags:
 > Cookie 学习, Let's start！
 
 ## Cookie的由来
-	首先我们需要介绍一下，在Web开发过程中为什么会引入Cookie。
-	我们知道Http协议是一种无状态协议，
-	Web服务器本身不能识别出哪些请求是同一个浏览器发出的，
-	浏览器的每一次请求都是完全孤立的。
-	即便在Http1.1支持了持续连接，
-	担当用户有一段时间没有提交请求时，
-	连接也会自动关闭。这
-	时，作为Web服务器，必须采用一种机制来唯一标识一个用户，
-	同时记录该用户的状态。于是就引入了第一种机制:Cookie机制。
-	Cookie机制: 采用的是在客户端保持Http状态的方案。
+
+```sh
+首先我们需要介绍一下，在Web开发过程中为什么会引入Cookie。
+我们知道Http协议是一种无状态协议，
+Web服务器本身不能识别出哪些请求是同一个浏览器发出的，
+浏览器的每一次请求都是完全孤立的。
+即便在Http1.1支持了持续连接，
+担当用户有一段时间没有提交请求时，
+连接也会自动关闭。这时，作为Web服务器，
+必须采用一种机制来唯一标识一个用户，
+同时记录该用户的状态。于是就引入了第一种机制:Cookie机制。
+Cookie机制: 采用的是在客户端保持Http状态的方案。
+```
 	
 ## Cookie的定义即基本介绍
-	Cookie是在浏览器访问WEB服务器的某个资源时，
-	由WEB服务器在HTTP响应消息头中附带传送给浏览器的一个小文本文件。
-    1. 一旦WEB浏览器保存了某个Cookie，
-	   那么它在以后每次访问该WEB服务器时，
-	   都会在HTTP请求头中将这个Cookie回传给WEB服务器。
-	2. 一个Cookie只能标识一种信息，
-	   它至少含有一个标识该信息的名称（NAME）和设置值（VALUE）。 
-	3. 一个WEB站点可以给一个WEB浏览器发送多个Cookie，
-	   一个WEB浏览器也可以存储多个WEB站点提供的Cookie。
-	4. 浏览器一般只允许存放300个Cookie，
-	   每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB。
+
+```sh
+Cookie是在浏览器访问WEB服务器的某个资源时，
+由WEB服务器在HTTP响应消息头中附带传送给浏览器的一个小文本文件。
+1. 一旦WEB浏览器保存了某个Cookie，
+   那么它在以后每次访问该WEB服务器时，
+   都会在HTTP请求头中将这个Cookie回传给WEB服务器。
+2. 一个Cookie只能标识一种信息，
+   它至少含有一个标识该信息的名称（NAME）和设置值（VALUE）。 
+3. 一个WEB站点可以给一个WEB浏览器发送多个Cookie，
+   一个WEB浏览器也可以存储多个WEB站点提供的Cookie。
+4. 浏览器一般只允许存放300个Cookie，
+   每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB。
+```
 	
 ## Cookie的原理
-	底层的实现原理： WEB服务器通过在HTTP响应消息中增加
-	                Set-Cookie响应头字段将Cookie信息发送给浏览器，
-	浏览器则通过在HTTP请求消息中增加Cookie请求头字段将Cookie回传给WEB服务器。
+
+```sh
+底层的实现原理： WEB服务器通过在HTTP响应消息中增加
+		Set-Cookie响应头字段将Cookie信息发送给浏览器，
+浏览器则通过在HTTP请求消息中增加Cookie请求头字段将Cookie回传给WEB服务器。
+```
 
 ## Cookie的传送过程示意图 
 <img src = "/img/cookie/processofcookie.jpg">
 	
 ## Cookie 在JavaWeb中的使用
-       1. Servlet API中提供了一个javax.servlet.http.Cookie类来封装Cookie信息，
-	      它包含有生成Cookie信息和提取Cookie信息的各个属性的方法。
-       2. Cookie类的方法：
-        - 构造方法： public Cookie(String name,String value)
-        - getName方法 
-        - setValue与getValue方法 
-        - setMaxAge与getMaxAge方法 
-        - setPath与getPath方法
-       3. HttpServletResponse接口中定义了一个addCookie方法，
-	      它用于在发送给浏览器的HTTP响应消息中增加一个Set-Cookie响应头字段。
-	   4. HttpServletRequest接口中定义了一个getCookies方法，
-	      它用于从HTTP请求消息的Cookie请求头字段中读取所有的Cookie项。
+
+```sh
+1. Servlet API中提供了一个javax.servlet.http.Cookie类来封装Cookie信息，
+      它包含有生成Cookie信息和提取Cookie信息的各个属性的方法。
+2. Cookie类的方法：
+      - 构造方法： public Cookie(String name,String value)
+      - getName方法 
+      - setValue与getValue方法 
+      - setMaxAge与getMaxAge方法 
+      - setPath与getPath方法
+3. HttpServletResponse接口中定义了一个addCookie方法，
+      它用于在发送给浏览器的HTTP响应消息中增加一个Set-Cookie响应头字段。
+4. HttpServletRequest接口中定义了一个getCookies方法，
+      它用于从HTTP请求消息的Cookie请求头字段中读取所有的Cookie项。
+```
 
 ## Cookie的发送 
+
+```sh
 	1. 创建Cookie对象
 	2. 设置最大时效
 	3. 将Cookie放入到HTTP响应报头
@@ -74,33 +88,39 @@ tags:
            将cookie插入到一个 Set-Cookie　HTTP响应报头中。
 	   由于这个方法并不修改任何之前指定的Set-Cookie报头，
            而是创建新的报头，因此将这个方法称为是addCookie，而非setCookie。
+```
 
 ## Cookie的读取
-	1. 调用request.getCookies要获取浏览器发送来的cookie，
-	   需要调用HttpServletRequest的getCookies方法，
-	   这个调用返回Cookie对象的数组，对应由HTTP请求中Cookie报头输入的值。
-        2. 对数组进行循环，调用每个cookie的getName方法，
-           直到找到感兴趣的cookie为止。
+
+```sh
+1. 调用request.getCookies要获取浏览器发送来的cookie，
+   需要调用HttpServletRequest的getCookies方法，
+   这个调用返回Cookie对象的数组，对应由HTTP请求中Cookie报头输入的值。
+2. 对数组进行循环，调用每个cookie的getName方法，
+   直到找到感兴趣的cookie为止。
+```
     
 ## 会话cookie和持久cookie的区别 
-	1. 如果不设置过期时间，则表示这个cookie生命周期为浏览器会话期间，
-	   只要关闭浏览器窗口，cookie就消失了。
-	   这种生命期为浏览器会话期的cookie被称为会话cookie。
-	   会话cookie一般不保存在硬盘上而是保存在内存里。
-        2. 如果设置了过期时间，浏览器就会把cookie保存到硬盘上，
-	   关闭后再次打开浏览器，这些cookie依然有效直到超过设定的过期时间。 
-	   设置过期时间: setMaxAge(param) param为具体的时间，单位为秒。
-        3. 存储在硬盘上的cookie可以在不同的浏览器进程间共享，
-	   比如两个IE窗口。而对于保存在内存的cookie，不同的浏览器有不同的处理方式。
+
+1. 如果不设置过期时间，则表示这个cookie生命周期为浏览器会话期间，
+   只要关闭浏览器窗口，cookie就消失了。
+   这种生命期为浏览器会话期的cookie被称为会话cookie。
+   会话cookie一般不保存在硬盘上而是保存在内存里。
+2. 如果设置了过期时间，浏览器就会把cookie保存到硬盘上，
+   关闭后再次打开浏览器，这些cookie依然有效直到超过设定的过期时间。 
+   设置过期时间: setMaxAge(param) param为具体的时间，单位为秒。
+3. 存储在硬盘上的cookie可以在不同的浏览器进程间共享，
+   比如两个IE窗口。而对于保存在内存的cookie，不同的浏览器有不同的处理方式。
 
 ## How to run code
-	1. 将代码clone到本地，使用eclipse导入代码，导入的时候项目的类型选择"git project"。
-	2. 右键项目 run on Server。
-	
-	法二: 将项目中WebContent中的内容拷入你的Tomccat服务器下的webapps目录下你建的站点名，
-	      然后启动tomcat服务器,
-	      在浏览器中输入: http://localhost:8080/站点名，即可访问<br/>
-	Tomcat目录下的webapps目录如下:
+
+1. 将代码clone到本地，使用eclipse导入代码，导入的时候项目的类型选择"git project"。
+2. 右键项目 run on Server。
+
+法二: 将项目中WebContent中的内容拷入你的Tomccat服务器下的webapps目录下你建的站点名，
+      然后启动tomcat服务器,
+      在浏览器中输入: http://localhost:8080/站点名，即可访问<br/>
+Tomcat目录下的webapps目录如下:
 
 <img src = "/img/tomcat.png">
 
