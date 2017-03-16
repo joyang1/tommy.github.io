@@ -70,9 +70,11 @@ WEB服务器采用“超时限制”的办法来判断客户端是否还在继�
 结束与该客户端的会话并将与之对应的HttpSession对象变成垃圾。<br/> 
 如果客户端浏览器超时后再次发出访问请求，WEB服务器则认为这是一个新的会话的开始，将为之创建新的HttpSession对象和分配新的会话标识号。 <br/> 
 会话的超时间隔可以在web.xml(Tomcat服务器或者web应用程序)文件中设置，其默认值由Servlet容器定义。 <br/> 
+```sh
 <session-config>
-	<session-timeout>30</session-timeout>
+    <session-timeout>30</session-timeout>
 </session-config>
+```
 
 ## How to run code
 
