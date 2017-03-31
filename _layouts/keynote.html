@@ -250,6 +250,18 @@ layout: default
 <!-- disqus 公共JS代码 end -->
 {% endif %}
 
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var uyan_identifier = "{{page.id}}";
+    var uyan_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var uyan = document.createElement('script'); uyan.type = 'text/javascript'; uyan.async = true;
+        uyan.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//v2.uyan.cc/code/uyan.js?uid=2129474';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
 
 {% if site.anchorjs %}
 <!-- async load function -->
