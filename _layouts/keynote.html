@@ -58,8 +58,6 @@ layout: default
 				{{ content }}
                 <hr>
 				
-				<!-- UY BEGIN -->
-				
 				<!-- JiaThis Button BEGIN -->
 				<div class="jiathis_style">
 					<span class="jiathis_txt">分享到：</span>
@@ -74,12 +72,7 @@ layout: default
 				
 				<!-- UJian Button BEGIN -->
 				<div class="ujian-hook"></div>	
-				<!-- UJian Button END -->
-				<div class="comment">
-                    <div id="uyan_frame">
-                    </div>
-                </div>
-				<!-- UY END -->
+				<!-- UJian Button END -->	
 
                 {% if site.duoshuo_share && site.duoshuo_username %}
                 <!-- 多说 Share start -->
@@ -146,6 +139,10 @@ layout: default
                 </div>
                 <!-- disqus 评论框 end -->
                 {% endif %}
+				
+				<div class="youyan" id="comments">
+					<div id="uyan_frame"></div>
+				</div>
 
             </div>
 
