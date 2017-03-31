@@ -58,7 +58,7 @@ layout: default
 				{{ content }}
                 <hr>
 
-                {% if site.duoshuo_share %}
+                {% if site.duoshuo_share && site.duoshuo_username %}
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
@@ -104,13 +104,13 @@ layout: default
 
                 {% if site.duoshuo_username %}
                 <!-- 多说评论框 start -->
-                <div class="comment">
+                <!-- <div class="comment">
                     <div class="ds-thread"
                         data-thread-key="{{page.id}}"
                         data-title="{{page.title}}"
                         data-url="{{site.url}}{{site.baseurl}}{{page.url}}" >
                     </div>
-                </div>
+                </div> -->
                 <!-- 多说评论框 end -->
                 {% endif %}
 
