@@ -74,7 +74,7 @@ layout: default
 				<div class="ujian-hook"></div>	
 				<!-- UJian Button END -->	
 
-                {% if site.duoshuo_share && site.duoshuo_username %}
+                {% if site.duoshuo_share%}
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
@@ -139,11 +139,6 @@ layout: default
                 </div>
                 <!-- disqus 评论框 end -->
                 {% endif %}
-				
-				<div class="youyan" id="comments">
-					<div id="uyan_frame"></div>
-				</div>
-
             </div>
 
             <!-- Sidebar Container -->
@@ -207,10 +202,6 @@ layout: default
     resize();
 </script>
 
-<script type="text/javascript">
-	var jiathis_config = {data_track_clickback:'true'};
-</script>
-
 
 {% if site.duoshuo_username %}
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -249,18 +240,6 @@ layout: default
 </script>
 <!-- disqus 公共JS代码 end -->
 {% endif %}
-
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var uyan_identifier = "{{page.id}}";
-    var uyan_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var uyan = document.createElement('script'); uyan.type = 'text/javascript'; uyan.async = true;
-        uyan.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//v2.uyan.cc/code/uyan.js?uid=2129474';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
 
 
 {% if site.anchorjs %}
