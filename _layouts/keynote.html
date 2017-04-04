@@ -124,11 +124,13 @@ layout: default
                 <!-- disqus 评论框 end -->
                 {% endif %}
 				
+				{% if site.uyan_username %}
 				<!-- 友言评论框 start -->
 				<div class="comment">
 					<div id="uyan_frame" class="uyan-thread"></div>
 				</div>
 				<!-- 友言评论框 end -->
+				{% endif %}
             </div>
 
             <!-- Sidebar Container -->
@@ -230,6 +232,24 @@ layout: default
     })();
 </script>
 <!-- disqus 公共JS代码 end -->
+{% endif %}
+
+{% if site.disqus_username %}
+<!-- uyan 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var _user = "{{site.uyan_username}}";
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '/v2.uyan.cc/code/uyan.js?uid=2129474';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- uyan 公共JS代码 end -->
 {% endif %}
 
 
