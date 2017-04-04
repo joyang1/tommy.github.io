@@ -110,16 +110,24 @@ layout: default
                 {% endif %}
 				
 				{% if site.uyan_share && site.uyan_username %}
-				 </style>
 				<!-- JiaThis Button BEGIN -->
-				<div class="jiathis_style">
-					<span class="jiathis_txt">分享到：</span>
-					<a class="jiathis_button_tools_1"></a>
-					<a class="jiathis_button_tools_2"></a>
-					<a class="jiathis_button_tools_3"></a>
-					<a class="jiathis_button_tools_4"></a>
-					<a href="http://www.jiathis.com/share?uid=2129474" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-					<a class="jiathis_counter_style"></a>	
+				 </style>
+				<div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="{{page.id}}"
+                    data-title="{{page.title}}"
+                    data-url="{{site.url}}{{site.baseurl}}{{page.url}}"
+                    data-images="{{ site.url }}{{site.baseurl}}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
+                    data-content="{{ content | strip_html | truncate:80 }} | {{ site.SEOTitle }} ">
+					<div class="jiathis_style">
+						<span class="jiathis_txt">分享到：</span>
+						<a class="jiathis_button_tools_1"></a>
+						<a class="jiathis_button_tools_2"></a>
+						<a class="jiathis_button_tools_3"></a>
+						<a class="jiathis_button_tools_4"></a>
+						<a href="http://www.jiathis.com/share?uid=2129474" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+						<a class="jiathis_counter_style"></a>	
+					</div>
 				<hr>
 				</div>
 				
