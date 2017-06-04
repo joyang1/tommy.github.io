@@ -147,18 +147,11 @@ layout: default
 				</div>
 				<!-- 友言评论框 end -->
 				{% endif %}
+				{% if site.wangyi_username %}
 				<div class="comment">
 					<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-					<script>
-					  var cloudTieConfig = {
-						url: document.location.href, 
-						sourceId: "",
-						productKey: "a92e775873674f43a77b2a5568b942a0",
-						target: "cloud-tie-wrapper"
-					  };
-					</script>
-					<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 				</div>
+				{% endif %}
 
             </div>
 
