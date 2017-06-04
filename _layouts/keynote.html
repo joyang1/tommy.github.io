@@ -277,12 +277,14 @@ layout: default
 {% if site.wangyi_username %}
 <!-- 网易云跟帖 公共JS代码 start (一个网页只需插入一次) -->
 <script>
-  var cloudTieConfig = {
-    url: document.location.href, 
-    sourceId: "",
-    productKey: "a92e775873674f43a77b2a5568b942a0",
-    target: "cloud-tie-wrapper"
-  };
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "a92e775873674f43a77b2a5568b942a0",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
 <!-- 网易云跟帖 公共JS代码 end -->
 {% endif %}
