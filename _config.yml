@@ -58,8 +58,11 @@ kramdown:
 
 
 # UYan settings
-uyan_username: tommy
-uyan_share: true
+#uyan_username: tommy
+#uyan_share: true
+
+# wangyi settings
+wangyi_username: tommy
 
 
 
