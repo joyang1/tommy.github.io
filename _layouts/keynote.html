@@ -147,6 +147,11 @@ layout: default
 				</div>
 				<!-- 友言评论框 end -->
 				{% endif %}
+				 {% if site.wangyi_username %} 
+				<div class="comment">
+					<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+				</div>
+				 {% endif %} 
             </div>
 
             <!-- Sidebar Container -->
@@ -255,7 +260,7 @@ layout: default
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var _user = "{{site.uyan_username}}";
-    var duoshuoQuery = {short_name: _user };
+    var uyanQuery = {short_name: _user };
     (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
@@ -268,6 +273,18 @@ layout: default
 <!-- uyan 公共JS代码 end -->
 {% endif %}
 
+{% if site.wangyi_username %}
+<!-- 网易云跟帖 公共JS代码 start (一个网页只需插入一次) -->
+<script>
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "a92e775873674f43a77b2a5568b942a0",
+  target: "cloud-tie-wrapper"
+};
+</script>
+<!-- 网易云跟帖 公共JS代码 end -->
+{% endif %}
 
 {% if site.anchorjs %}
 <!-- async load function -->
