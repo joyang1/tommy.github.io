@@ -1,5 +1,7 @@
 #Hux Blog
 
+[![Join the chat at https://gitter.im/tommy-github-io/Lobby](https://badges.gitter.im/tommy-github-io/Lobby.svg)](https://gitter.im/tommy-github-io/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ###[View Live Hux Blog &rarr;](http://huxpro.github.io)
 
 ![](http://huangxuan.me/img/blog-desktop.jpg)
