@@ -15,7 +15,7 @@ tags:
 
 ## 从抽象的JVM的角度看
 
-相关定义请参考JVM规范：[Chapter 2. The Structure of the Java Virtual Machine](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5)
+相关定义请参考JVM规范：[Chapter 2. The Structure of the Java Virtual Machine](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5)<br/>
 从该角度看的话Java内存结构包含以下部分：
 
 1、栈区：由编译器自动分配释放，具体方法执行结束后，系统自动释放JVM内存资源。
