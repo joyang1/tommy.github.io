@@ -1,0 +1,105 @@
+---
+layout:     post
+title:      "字符串常量"
+subtitle:   " \"字符串常量的存储\""
+date:       2017-04-03 23:43:13
+author:     "Tommy"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Java
+    - 字符串常量
+---
+
+> 字符串常量的存储学习, Let's start！
+
+## 从抽象的JVM的角度看
+
+相关定义请参考JVM规范：[Chapter 2. The Structure of the Java Virtual Machine](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5)
+从该角度看的话Java内存结构包含以下部分：
+
+1、栈区：由编译器自动分配释放，具体方法执行结束后，系统自动释放JVM内存资源。
+
+其作用有保存局部变量的值，包括：1.用来保存基本数据类型的值；2.保存类的实例，即堆区对象的引用。也可以用来保存加载方法时的帧。
+
+2、堆区：一般由程序员分配释放，JVM不定时查看这个对象，如果没有引用指向这个对象就回收。
+
+其作用为用来存放动态产生的数据，包括new出来的实例，字符数组等。注意创建出来的对象只包含属于各自的成员变量，并不包括成员方法。
+
+因为同一个类的对象拥有各自的成员变量，存储在各自的堆中，但是他们共享该类的方法，并不是每创建一个对象就把成员方法复制一次。
+
+3、代码区：存放程序中方法的二进制代码，而且是多个对象共享一个代码空间区域。
+
+4、数据区：用来存放static定义的静态成员。
+
+5、常量池：JVM为每个已加载的类型维护一个常量池，常量池就是这个类型用到的常量的一个有序集合。包括直接常量(基本类型，String)和对其他类型、方法、字段的符号引用。池中的数据和数组一样通过索引访问。由于常量池包含了一个类型所有的对其他类型、方法、字段的符号引用，所以常量池在Java的动态链接中起了核心作用。常量池存在于堆中。
+
+下图大致描述了JAVA的内存分配
+<img src="/img/char/char040301.png">
+
+## 从操作系统进程的角度看
+
+接来下我们来看一段代码实例与注释：
+```sh
+public class TestStringConstant {
+     public static void main(String args[]) {
+         // 字符串常量，分配在常量池中，编译器会对其进行优化，  Interned table
+         // 即当一个字符串已经存在时，不再重复创建一个相同的对象，而是直接将s2也指向"testStringConstant".
+         String s1 = "testStringConstant";   
+         String s2 = "testStringConstant";
+         // new出来的对象，分配在heap中.s3与s4虽然它们指向的字符串内容是相同的，但是是两个不同的对象.
+         // 因此==进行比较时，其所存的引用是不同的，故不会相等
+         String s3 = new String("stringConstant");      
+         String s4 = new String("stringConstant");
+         
+         System.out.println(s1 == s2);   // true
+         System.out.println(s3 == s4);   // false
+         System.out.println(s3.equals(s4));   // true   
+         // String中equals方法已经被重写过，比较的是内容是否相等.
+     }
+}
+```
+
+那么对于上例代码中提到的编译器的优化，下面将进行更进一步的详细介绍。请看下例代码：
+
+```sh
+public class A {
+    private String a = "aa";
+    public boolean methodB() {
+        String b = "bb";
+        final String c = "cc";
+        return false;
+    }
+}
+```
+
+"aa"、"bb"的String对象按JVM规范在Java heap上，在JDK8之前的HotSpot VM实现里在PermGen，在JDK7开始的HotSpot VM里在普通Java heap里（而不在PermGen里）；"cc"如果存在的话也一样，但是可能会不存在。
+
+这些String对象属于“interned String”。String是Java对象，根据JVM规范的定义它必须存在于Java heap中，interned String也不例外。Interned String特别的地方在于JVM会有个StringTable存着interned String的引用，保证内容相同的String对象不被重复intern。（这里便是编译器的优化）
+
+这个StringTable怎样实现JVM规范里并没有规定，不过通常它并不保存String对象的内容，而只是保存String对象的引用而已。
+
+从JVM规范看a、b、c变量：
+a变量作为A类的对象实例字段，会跟随A的实例在Java heap上。
+
+b变量作为局部变量会在Java线程栈上。
+
+c变量虽然也是局部变量，但因为有final修饰并且有初始化为一个常量值，所以c是一个常量。它可能会被优化掉（就没有c这个变量了），也可能跟b一样作为局部变量在Java线程栈上。
+
+从HotSpot VM的实现看：
+当methodB()被解释执行时，输入的字节码是怎样的就会怎样执行，而由于javac的实现不会优化掉变量b，所以调用methodB()时它一定会在Java线程栈上的局部变量区里；当字节码里变量c存在时，它也跟b一样在Java线程栈的局部变量区。
+
+当methodB()被JIT编译执行时，由于局部变量b、c都没有被使用，所以它们经过JIT编译后就消失了，调用methodB()不会在栈上给b或c变量分配任何空间。
+
+ 
+通过以上相信大家对于字符串常量的分配区域以及java的内存分配有了一个较为形象的了解。
+
+下面是一些相关知识点的补充与注意事项：
+
+1.分清什么是实例什么是对象。Class a= new Class();此时a叫实例，而不能说a是对象。实例在栈中，对象在堆中，操作实例实际上是通过实例的指针间接操作对象。多个实例可以指向同一个对象。
+
+2.栈中的数据和堆中的数据销毁并不是同步的。方法一旦结束，栈中的局部变量立即销毁，但是堆中对象不一定销毁。因为可能有其他变量也指向了这个对象，直到栈中没有变量指向堆中的对象时，它才销毁，而且还不是马上销毁，要等垃圾回收扫描时才可以被销毁。
+
+3.以上的栈、堆、代码段、数据段等等都是相对于应用程序而言的。每一个应用程序都对应唯一的一个JVM实例，每一个JVM实例都有自己的内存区域，互不影响。并且这些内存区域是所有线程共享的。这里提到的栈和堆都是整体上的概念，这些堆栈还可以细分。
+
+4.类的成员变量在不同对象中各不相同，都有自己的存储空间(成员变量在堆中的对象中)。而类的方法却是该类的所有对象共享的，只有一套，对象使用方法的时候方法才被压入栈，方法不使用则不占用内存。
