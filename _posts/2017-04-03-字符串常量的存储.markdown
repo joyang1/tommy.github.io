@@ -73,7 +73,7 @@ public class A {
 }
 ```
 
-"aa"、"bb"的String对象按JVM规范在Java heap上，在JDK8之前的HotSpot VM实现里在PermGen，在JDK7开始的HotSpot VM里在普通Java heap里（而不在PermGen里）；"cc"如果存在的话也一样，但是可能会不存在。
+"aa"、"bb"的String对象按JVM规范在Java heap上，在JDK8之前的HotSpot VM实现里在PermGen(内存的永久保存区域)，在JDK7开始的HotSpot VM里在普通Java heap里（而不在PermGen里）；"cc"如果存在的话也一样，但是可能会不存在。
 
 这些String对象属于“interned String”。String是Java对象，根据JVM规范的定义它必须存在于Java heap中，interned String也不例外。Interned String特别的地方在于JVM会有个StringTable存着interned String的引用，保证内容相同的String对象不被重复intern。（这里便是编译器的优化）
 
