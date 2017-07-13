@@ -2,7 +2,7 @@
 layout:     post
 title:      "单例、多例模式以及双检锁模式"
 subtitle:   " \"单例、多例模式以及双检锁模式\""
-date:       2017-04-03 23:43:13
+date:       2017-07-13 20:43:13
 author:     "Tommy"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
