@@ -22,6 +22,7 @@ Logger myLogger = new Logger(@“D:\my.log”);
 
 ## 单例模式（饿汉模式）
 
+```sh
 public  class  Logger
 {
     private  static  Logger  instance = new Logger();
@@ -31,6 +32,7 @@ public  class  Logger
         return instance;
     }
 }
+```
 
 通过以上的代码，我们就可以使用 GetInstance() 方法来获取被提前创建出来的 Logger类的实例，而且每次调用 GetInstance() 所获得到的对象都是同一个实例。这种方式就叫做单例模式。
 
