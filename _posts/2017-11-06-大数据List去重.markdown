@@ -18,7 +18,7 @@ tags:
 
 ### 直接两个List去重  
 
-说到去重，稍微多讲一点啊，去重的时候有点小伙伴可能直接对2500万List foreach循环后直接删除,
+说到去重，稍微多讲一点啊，去重的时候有的小伙伴可能直接对2500万List foreach循环后直接删除,
 其实这种是错误的(java.util.ConcurrentModificationException)，大家可以自己去试一下；(注: for循环遍历删除不报错，但是效率低，不推荐使用)
 首先你需要去看下foreach和迭代器的实现。foreach的实现就是用到了迭代器，所以你在foreach的时候对list进行删除操作，
 迭代器Iterator无法感知到list删除了，所以会报错。直接贴代码解释下。
