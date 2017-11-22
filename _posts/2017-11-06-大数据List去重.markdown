@@ -138,6 +138,31 @@ public static void deWeightList(Set<String> des, List<String> sourse) {
 }
 ```
 
+### List结合Set去重(不是直接对list进行删除，而是组装新list，考虑到list删除效率低)
+```
+public static void deWeightListByNewList(Set<String> des, List<String> sourse) {
+    if (sourse == null || sourse.size() <= 0) {
+        return;
+    }
+    Iterator<String> listStr = sourse.iterator();
+    List<String> existList = new ArrayList<String>();
+    while (listStr.hasNext()) {
+        String item = listStr.next();
+        if(!des.contains(item)){
+            //TODO 对去重后的数据进行逻辑操作，不一定要删除，可以换个思路（是否可以直接逻辑操作，不一定非要再把数据写进集合后，然后遍历集合在进行逻辑操作）
+            existList.add(item); //改成添加进新的list，考虑到list的删除效率慢(非要得到删除后的集合的情况下，否则走else)
+        }
+//            if (des.contains(item)) {
+//                //listStr.remove(); //考虑到list的删除效率慢，此种方法对于大数据集合来说不合适
+//            }
+    }
+    sourse.clear();
+    sourse = existList;
+    logger.info("after deWight list size: " + sourse.size());
+}
+    
+```
+
 ### 遍历过程中去重
 
 个人最为推荐的一种,因为效率最高，也能达到功能的需要。
@@ -154,6 +179,7 @@ for (String item: maxArrayList) {
 
 ### 测试结果如下
 ```
+
 下面是1000万的list和20000的list去重两种方式所花的时间,可以看出使用set去重的效率要高很多。
 1.list结合list去重时间:
 14:52:02,408 INFO  [RunTest:37] start test list:17-11-07 14:52:02
@@ -166,25 +192,37 @@ for (String item: maxArrayList) {
 15:01:30,079 INFO  [RunTest:46] end test set:17-11-07 15:01:30
 
 下面是2500万的list和20000的list去重两种方式所花的时间,可以看出使用set去重的效率要更加的高，(数据量越大越明显)。
-1.遍历过程中结合set去重:(个人最为推荐的原因之一，效率搞到令人爽到不行)
-15:17:45,762 INFO  [RunTest:24] start test foreach list directly, start time: 17-11-07 15:17:45
-15:17:47,114 INFO  [RunTest:32] end test foreach list directly, end time: 17-11-07 15:17:47
-
-2.list结合list去重时间:
+1.list结合list去重时间:
 15:17:47,114 INFO  [RunTest:35] start test list, start time: 17-11-07 15:17:47
 15:49:04,876 INFO  [ListUtils:57] after deWight list size: 24980000
 15:49:04,877 INFO  [RunTest:39] end test list, end time: 17-11-07 15:49:04
 
-3.list结合set去重时间:
+2.list结合set去重时间:
 15:49:17,842 INFO  [RunTest:44] start test set, start time: 17-11-07 15:49:17
 15:53:22,716 INFO  [ListUtils:71] after deWight list size: 24980000
 15:53:22,718 INFO  [RunTest:48] end test set, end time: 17-11-07 15:53:22
 
+3. List结合Set去重(不是直接对list进行删除，而是组装新list，考虑到list删除效率低)
+17:18:44,583 INFO  [RunTest:57] start test set, start time: 17-11-22 17:18:44
+17:18:54,628 INFO  [ListUtils:92] after deWight list size: 23500000
+17:18:54,628 INFO  [RunTest:61] end test set, end time: 17-11-22 17:18:48
+
+4.遍历过程中结合set去重:(个人最为推荐的原因之一，效率高到令人爽到不行)
+15:17:45,762 INFO  [RunTest:24] start test foreach list directly, start time: 17-11-07 15:17:45
+15:17:47,114 INFO  [RunTest:32] end test foreach list directly, end time: 17-11-07 15:17:47
+
 ```
 
 ### 总结
+
 通过上述测试我们可以看出，有时候我们排重的时候，不一定要拍完重再对排重后的数据进行遍历，可以在遍历的过程中进行排重，注意用来排重的那个集合放到Set中，
 可以是HashSet,或者其他Set(推荐使用HashSet),因为Set的contains效率更高，比list高很多。
+
+然后考虑到如果非要拿到去重后的list，考虑使用方案3《List结合Set去重(不是直接对list进行删除，而是组装新list，考虑到list删除效率低)》，通过测试，这种方法效率也是非常的高。
+与方案4相比，稍微慢一点点。
+
+对于上述方案1和方案2，测试也是使用组装新list的方式，而不是list.remove。但是效率还是比较慢。
+
 这是实际工作中总结出来的经验。希望对大家有帮助！
 欢迎大家来交流！
 
