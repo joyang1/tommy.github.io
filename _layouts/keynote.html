@@ -143,7 +143,7 @@ layout: default
 				{% if site.uyan_username %}
 				<!-- 友言评论框 start -->
 				<div class="comment">
-					<div id="uyan_frame" class="uyan-thread"></div>
+					<div id="uyan_frame"></div>
 				</div>
 				<!-- 友言评论框 end -->
 				{% endif %}
@@ -259,6 +259,7 @@ layout: default
 <!-- uyan 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
+	var jiathis_config = {data_track_clickback:'true'};
     var _user = "{{site.uyan_username}}";
     var uyanQuery = {short_name: _user };
     (function() {
