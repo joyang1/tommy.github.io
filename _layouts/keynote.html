@@ -144,7 +144,6 @@ layout: default
 				<!-- 友言评论框 start -->
 				<div class="comment">
 					<div id="uyan_frame"></div>
-					<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2129474"></script>
 				</div>
 				<!-- 友言评论框 end -->
 				{% endif %}
@@ -261,7 +260,7 @@ layout: default
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
 	var jiathis_config = {data_track_clickback:'true'};
-    var _user = "{{site.uyan_username}}";
+    /*var _user = "{{site.uyan_username}}";
     var uyanQuery = {short_name: _user };
     (function() {
         var ds = document.createElement('script');
@@ -270,7 +269,7 @@ layout: default
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
          || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+    })();*/
 </script>
 <!-- uyan 公共JS代码 end -->
 {% endif %}
