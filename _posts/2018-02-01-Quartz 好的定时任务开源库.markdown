@@ -252,6 +252,9 @@ public static void shutdownJobs(){
 }
 ```
 
+## Quartz 官方文档
+[官方文档](http://www.quartz-scheduler.org/documentation/quartz-2.2.x/quick-start.html)
+
 ## 项目地址
 [github地址](https://github.com/joyang1/QuartzJob)
 
