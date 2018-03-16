@@ -77,7 +77,7 @@ ga_domain: tommyyang.cn
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "学学技术，写写代码，做做项目，看看产品。世界那么大，我想去看看。"
+sidebar-about-description: "学学技术，写写代码，做做项目，看看产品。世界那么大，我想去看看。有需要代码代写的可以加qq群:710292145。"
 sidebar-avatar: /img/tommy1.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
