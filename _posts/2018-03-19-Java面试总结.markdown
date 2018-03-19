@@ -16,7 +16,7 @@ tags:
 
 有任何问题，或者好的建议，好的面试相关的题目都可以在这里面进行提交！<br/>
 联系我: tingzai.yang@gmail.com<br/>
-有什么问题也可以在这里进行[讨论](https://github.com/joyang1/JavaInterview/issues/1?_blank)<br/>
+有什么问题也可以在这里进行[讨论](https://github.com/joyang1/JavaInterview/issues/1)<br/>
 本文会持续更新！欢迎大家收藏。
 
 ## 面试之-[排序算法总结](https://github.com/joyang1/JavaInterview/tree/master/SortPro)
@@ -84,7 +84,7 @@ tags:
 1. [transient](https://github.com/joyang1/JavaInterview/tree/master/KeyWords/transient.md)
 2. [volatile](https://github.com/joyang1/JavaInterview/tree/master/KeyWords/volatile.md)
 
-## 面试之-[http请求中Get和Post](http://blog.tommyyang.cn/2018/03/06/http%E4%B8%ADget%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/?_blank)
+## 面试之-[http请求中Get和Post](http://blog.tommyyang.cn/2018/03/06/http%E4%B8%ADget%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/){:target="_blank"}
 
 见上一篇文章
 
