@@ -16,15 +16,15 @@ tags:
 
 有任何问题，或者好的建议，好的面试相关的题目都可以在这里面进行提交！<br/>
 联系我: tingzai.yang@gmail.com<br/>
-有什么问题也可以在这里进行[讨论](https://github.com/joyang1/JavaInterview/issues/1)<br/>
+有什么问题也可以在这里进行[讨论](https://github.com/joyang1/JavaInterview/issues/1){:target="_blank"}<br/>
 本文会持续更新！欢迎大家收藏。
 
-## 面试之-[排序算法总结](https://github.com/joyang1/JavaInterview/tree/master/SortPro)
+## 面试之-[排序算法总结](https://github.com/joyang1/JavaInterview/tree/master/SortPro){:target="_blank"}
 排序算法是《数据结构与算法》中最基本的算法之一。
 
 排序算法可以分为内部排序和外部排序，内部排序是数据记录在内存中进行排序，而外部排序是因排序的数据很大，一次不能容纳全部的排序记录，在排序过程中需要访问外存。常见的内部排序算法有：**插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序、基数排序**等。用一张图概括：
 
-![十大经典排序算法 概览截图](https://github.com/joyang1/JavaInterview/tree/master/SortPro/res/sort.png)
+<img src = "https://github.com/joyang1/JavaInterview/tree/master/SortPro/res/sort.png">
 
 
 **关于时间复杂度**：
@@ -63,26 +63,26 @@ tags:
 
 **目录**
 
-1. [冒泡排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/1.bubbleSort.md)
-2. [选择排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/2.selectionSort.md)
-3. [插入排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/3.insertionSort.md)
-4. [希尔排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/4.shellSort.md)
-5. [归并排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/5.mergeSort.md)
-6. [快速排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/6.quickSort.md)
-7. [堆排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/7.heapSort.md)
-8. [计数排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/8.countingSort.md)
-9. [桶排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/9.bucketSort.md)
-10. [基数排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/10.radixSort.md)
+1. [冒泡排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/1.bubbleSort.md){:target="_blank"}
+2. [选择排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/2.selectionSort.md){:target="_blank"}
+3. [插入排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/3.insertionSort.md){:target="_blank"}
+4. [希尔排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/4.shellSort.md){:target="_blank"}
+5. [归并排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/5.mergeSort.md){:target="_blank"}
+6. [快速排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/6.quickSort.md){:target="_blank"}
+7. [堆排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/7.heapSort.md){:target="_blank"}
+8. [计数排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/8.countingSort.md){:target="_blank"}
+9. [桶排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/9.bucketSort.md){:target="_blank"}
+10. [基数排序](https://github.com/joyang1/JavaInterview/tree/master/SortPro/10.radixSort.md){:target="_blank"}
 
 本模块内容几乎完全来源于网络，动图演示感谢Github用户hustcc，来自于hustcc的项目。
 
 
 ## 面试之-[Servlet和JSP]()
 
-## 面试之-[关键字总结](https://github.com/joyang1/JavaInterview/tree/master/KeyWords)
+## 面试之-[关键字总结](https://github.com/joyang1/JavaInterview/tree/master/KeyWords){:target="_blank"}
 
-1. [transient](https://github.com/joyang1/JavaInterview/tree/master/KeyWords/transient.md)
-2. [volatile](https://github.com/joyang1/JavaInterview/tree/master/KeyWords/volatile.md)
+1. [transient](https://github.com/joyang1/JavaInterview/tree/master/KeyWords/transient.md){:target="_blank"}
+2. [volatile](https://github.com/joyang1/JavaInterview/tree/master/KeyWords/volatile.md){:target="_blank"}
 
 ## 面试之-[http请求中Get和Post](http://blog.tommyyang.cn/2018/03/06/http%E4%B8%ADget%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/){:target="_blank"}
 
@@ -90,5 +90,5 @@ tags:
 
 
 ## Github地址
-本文内容在[Github](https://github.com/joyang1/JavaInterview),欢迎大家fork或star
+本文内容在[Github](https://github.com/joyang1/JavaInterview){:target="_blank"},欢迎大家fork或star
 
