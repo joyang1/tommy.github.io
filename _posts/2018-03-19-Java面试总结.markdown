@@ -89,5 +89,5 @@ tags:
 
 
 ## Github地址
-本文内容在[Github](https://github.com/joyang1/JavaInterview){:target="_blank"},欢迎大家fork或star
+本文内容在[Github](https://github.com/joyang1/JavaInterview){:target="_blank"},欢迎大家fork或star。
 
