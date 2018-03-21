@@ -236,7 +236,8 @@ layout: default
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        //dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		dsq.src= 'http://blog.tommyyang.cn/js/embed.js'
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
@@ -247,7 +248,7 @@ layout: default
 <!-- uyan 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
-	var jiathis_config = {data_track_clickback:'true'};
+	//var jiathis_config = {data_track_clickback:'true'};
     /*var _user = "{{site.uyan_username}}";
     var uyanQuery = {short_name: _user };
     (function() {
