@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="love1/css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="love1/js/jquery.js"></script>
+	<script type="text/javascript" src="love1/js/garden.js"></script>
+    <script type="text/javascript" src="love1/js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">我的宝贝</span><br />
+				<span class="space"/><span class="comments">我会牵着你的手，陪你做你想做的事</span><br />
+				<span class="space"/><span class="comments">我会守护你生命里的精彩，并陪伴你一路精彩下去。</span><br />
+				<span class="space"/><span class="comments">你的幸福快乐，是我一生的追求。</span><br />
+				<span class="space"/>陪你一起进考场，默默的守候着你，是我最大的幸福，<br />
+				<span class="space"/>默默的看着你那认真的样子，让我爱并心疼着，<br />
+				<span class="space"/>希望你的努力，能得到相应的回报，希望把我所有的好运气全部给你，<br />
+				<span class="space"/>默默的看着你靠着我看书的模样，心里无比的开心，享受着与你在一起的分分秒秒，<br />
+				<span class="space"/>考试结束了，看到你考完试后轻松的样子，我的心情也瞬间舒畅了。<br />
+				<span class="space"/>虽然逛街，逛超市，并不是我喜欢的，<br />
+				<span class="space"/>但是我发现与你一起的时候，什么都是我喜欢的，什么都是开心的，<br />
+				<span class="space"/>愿意牵着你的手陪你一直逛下去，<br />
+				<span class="space"/>脑子里也保存了两个关键词(枣糕&红枣酸奶)。<br />
+				<span class="space"/>一起进电影院，看到你开心的样子，我觉得世界就是这么简单，生活就是这么的美好，<br />
+				<span class="space"/>当你看到害怕的情节，朝我怀里躲的时候，我的心乐开了花，<br />
+				<span class="space">享受着这个美好的时刻，<br />
+				<span class="space">多么希望时间在那一刻停止下去。<br />
+				<span class="keyword"/>记住你的每个瞬间<br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						安琴,我爱你！
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- 杨挺(Yours, tommyyang)</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		
+		var d = Date.parse("2018/02/20 11:39");
+		var together = new Date(d);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
