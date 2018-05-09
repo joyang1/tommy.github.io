@@ -1,6 +1,6 @@
 var x,y;		//鼠标当前在页面上的位置
 var step=10;	//字符显示间距，为了好看，step=0则字符显示没有间距
-var message="yangting love chenganqin!";		//跟随鼠标要显示的字符串
+var message="yang ting love cheng anqin!";		//跟随鼠标要显示的字符串
 message=message.split("");	//将字符串分割为字符数组
 
 var xpos=new Array()		//存储每个字符的x位置的数组
