@@ -23,6 +23,7 @@ tags:
 
 ## maven dependency
 1. 添加repository
+
 ```
 <repositories>
     <repository>
@@ -35,7 +36,9 @@ tags:
     </repository>
 </repositories>
 ```
+
 2. 添加dependency
+
 ```
 <dependency>
     <groupId>cn.tommyyang</groupId>
@@ -47,6 +50,7 @@ tags:
 ### 使用
 1. 需要配置log4j.properties
 因为该jar包同样是依赖于slf4j,所以按log4j配置log4j.properties即可正常使用
+
 ```
 log4j.rootLogger=DEBUG,console
 
@@ -59,6 +63,7 @@ log4j.appender.console.layout.ConversionPattern=%-d{yyyy-MM-dd HH\:mm\:ss} [%c\:
 
 2. slf4j4json使用
 >直接打印
+
 ```
 logger.info().field("key1", "value1").intField("key2", 1).log();
 logger.warn().field("key1", "value1").intField("key2", 1).log();
@@ -68,6 +73,7 @@ logger.error().strField("key1", "value1").intField("key2", 1).log();
 ```
 
 >比如有一些键值对要重复赋值,使用getLogger方法，实例如下
+
 ```
 JsonLogger jsonLogger = logger.info().strField("appname", "app").getLogger();
 jsonLogger.strField("msg","infotest1").intField("port", 2).log();
@@ -75,6 +81,7 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
 ```
 
 ## 输出
+
 ```
 {"key1":"value1","key2":1,"index":"server-end-log","host":"DESKTOP-2B1VG6J","level":"info","time":1535021174}
 ```
