@@ -23,7 +23,8 @@ tags:
 
 ## maven dependency
 1. 添加repository
-<br/>
+
+
 ```
 <repositories>
     <repository>
@@ -47,14 +48,14 @@ tags:
 </dependency>
 ```
 
-### 使用
+## 使用
 1. 需要配置log4j.properties
 因为该jar包同样是依赖于slf4j,所以按log4j配置log4j.properties即可正常使用
 
 ```
 log4j.rootLogger=DEBUG,console
 
-#输出日志到控制台
+//输出日志到控制台
 log4j.appender.console=org.apache.log4j.ConsoleAppender
 log4j.appender.console.Threshold=all
 log4j.appender.console.layout=org.apache.log4j.PatternLayout
