@@ -9,8 +9,8 @@ catalog: true
 tags:
     - Java
     - log4j
-	- slf4j
-	- jsonlog
+    - slf4j 
+    - jsonlog
 ---
 
 
