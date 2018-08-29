@@ -18,11 +18,12 @@ tags:
 
 在工作中遇到了需要实现json格式的log,功能要类似于zerolog(go语言实现的库)中的json格式的log
 
-# slf4j4json
+## slf4j4json
 为slf4j提供自定义json格式的log输出
 
 ## maven dependency
 1. 添加repository
+
 
 ```
 <repositories>
