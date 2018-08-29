@@ -55,7 +55,7 @@ tags:
 ```
 log4j.rootLogger=DEBUG,console
 
-//输出日志到控制台
+#输出日志到控制台
 log4j.appender.console=org.apache.log4j.ConsoleAppender
 log4j.appender.console.Threshold=all
 log4j.appender.console.layout=org.apache.log4j.PatternLayout
