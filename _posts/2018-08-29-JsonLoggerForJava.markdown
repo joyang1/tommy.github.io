@@ -22,7 +22,7 @@ tags:
 为slf4j提供自定义json格式的log输出
 
 ## maven dependency
-1. 添加repository
+1 添加repository
 
 
 ```
@@ -38,7 +38,7 @@ tags:
 </repositories>
 ```
 
-2. 添加dependency
+2 添加dependency
 
 ```
 <dependency>
@@ -49,7 +49,7 @@ tags:
 ```
 
 ## 使用
-1. 需要配置log4j.properties
+1 需要配置log4j.properties
 因为该jar包同样是依赖于slf4j,所以按log4j配置log4j.properties即可正常使用
 
 ```
@@ -62,7 +62,7 @@ log4j.appender.console.layout=org.apache.log4j.PatternLayout
 log4j.appender.console.layout.ConversionPattern=%-d{yyyy-MM-dd HH\:mm\:ss} [%c\:%L]-[%p] %m%n
 ```
 
-2. slf4j4json使用
+2 slf4j4json使用
 >直接打印
 
 ```
