@@ -28,7 +28,7 @@ tags:
 ```
 <repositories>
     <repository>
-        <id>maven-repo-master</id>
+        <id>release</id>
         <url>https://raw.github.com/joyang1/slf4j4json/master/</url>
         <snapshots>
             <enabled>true</enabled>
