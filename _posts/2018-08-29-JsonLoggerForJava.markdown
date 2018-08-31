@@ -61,16 +61,17 @@ log4j.appender.console.layout.ConversionPattern=%-d{yyyy-MM-dd HH\:mm\:ss} [%c\:
 - 直接打印
 
 ``` java
-通过LoggerFactory获取一个logger
+//通过LoggerFactory获取一个logger
 final static Logger logger = LoggerFactory.getLogger(Test.class);
 
-打印必须调用log()方法
+//打印必须调用log()方法
 logger.info().field("key1", "value1").intField("key2", 1).log();
 logger.warn().field("key1", "value1").intField("key2", 1).log();
 logger.debug().strField("key1", "value1").longField("key2", 1L).log();
 logger.trace().strField("key1", "value1").intField("key2", 1).log();
 logger.error().strField("key1", "value1").intField("key2", 1).log();
 ```
+
 
 - 比如有一些键值对要重复赋值,使用getLogger方法，实例如下
 
