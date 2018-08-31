@@ -58,7 +58,7 @@ log4j.appender.console.layout.ConversionPattern=%-d{yyyy-MM-dd HH\:mm\:ss} [%c\:
 
 #### slf4j4json使用
     
-1. 直接打印
+- 直接打印
 ``` java
 通过LoggerFactory获取一个logger
 final static Logger logger = LoggerFactory.getLogger(Test.class);
@@ -71,7 +71,7 @@ logger.trace().strField("key1", "value1").intField("key2", 1).log();
 logger.error().strField("key1", "value1").intField("key2", 1).log();
 ```
 
-2. 比如有一些键值对要重复赋值,使用getLogger方法，实例如下
+- 比如有一些键值对要重复赋值,使用getLogger方法，实例如下
 ``` java
 JsonLogger jsonLogger = logger.info().strField("appname", "app").getLogger();
 jsonLogger.strField("msg","infotest1").intField("port", 2).log();
