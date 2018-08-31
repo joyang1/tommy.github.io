@@ -20,7 +20,7 @@ tags:
 为slf4j提供自定义json格式的log输出
 
 ## maven dependency
-### 添加repository
+#### 添加repository
 
 ``` java
 <repositories>
@@ -34,7 +34,7 @@ tags:
     </repository>
 </repositories>
 ```
-### 添加dependency
+#### 添加dependency
 ``` java
 <dependency>
     <groupId>cn.tommyyang</groupId>
