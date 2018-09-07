@@ -19,7 +19,9 @@ tags:
 方便简单的使用
 
 ## maven dependency
+
 1. 添加repository
+
 ``` java
 <repositories>
     <repository>
@@ -32,7 +34,9 @@ tags:
     </repository>
 </repositories>
 ```
-2. 添加dependency
+
+2.添加dependency
+
 ``` java
 <dependency>
     <groupId>cn.tommyyang</groupId>
