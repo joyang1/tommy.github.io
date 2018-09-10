@@ -2,7 +2,7 @@
 layout:     post
 title:      "Hello 2015"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       2015-01-29 12:00:00
+date:       2015-10-01 12:00:00
 author:     "Tommy"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
@@ -54,20 +54,17 @@ Tommy 的 Blog 就这么开通了。
 
 配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
 
-大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）
+大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是fork了huxpro.github.io这个项目。）
 
-本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
-
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
+结合这两个项目搭建好了自己的博客。
 
 
 ## 后记
 
-回顾这个博客的诞生，纯粹是出于个人兴趣。在知乎相关问题上回答并获得一定的 star 后，我决定把这个博客主题当作一个小小的开源项目来维护。
+回顾这个博客的诞生，纯粹是出于个人兴趣。然后希望能有一个自己的博客，于是就在利用GitHub Pages和Jekyll自制了自己博客。这个博客的诞生还是需要感谢
+GitHub提供这么好的平台以及上面开源项目:Clean Blog和huxpro.github.io。
 
-在经历 v1.0 - v1.5 的蜕变后，这个博客主题愈发完整，不但增加了诸多 UI 层的优化（opinionated）；在代码层面，更加丰富的配置项也使得这个主题拥有了更好的灵活性与可拓展性。而作为一个开源项目，我也积极的为其完善文档与解决 issue。
 
-如果你恰好逛到了这里，希望你也能喜欢这个博客主题。
 
 —— Tommy 后记于 2015.10
 
