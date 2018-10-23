@@ -50,7 +50,7 @@ kramdown:
 
 # Disqus settings
 #_your_disqus_short_name_
-disqus_username: tommy-1
+#disqus_username: tommy-1
 
 # Duoshuo settings
 #duoshuo_username: tommyblog
@@ -58,11 +58,15 @@ disqus_username: tommy-1
 #duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
-# UYan settings
-uyan_username: tommy
-uyan_share: true
-
-# wangyi settings
+# 评论系统
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: 'e2b0e306ea41d22e23f2'    #生成的clientID
+  clientSecret: 'dcf1c86b7d02b9cab7c5189e93d9cd5842b640a4'   #同上
+  repo: gitalk_repo    #仓库名称
+  owner: joyang1    #github用户名
+  admin: joyang1
 
 
 
