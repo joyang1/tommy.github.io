@@ -19,10 +19,12 @@ tags:
 - 配置JDK环境变量[详细步骤](https://www.jianshu.com/p/171cfd6de15c){:target="_blank"}
 - 安装Android Studio(Android IDE) [国内下载](http://android-studio.org/index.php/download){:target="_blank"},
 [官方下载](https://developer.android.com/studio/){:target="_blank"}
+  
+  安装简单,基本都是点击下一步，Android Studio的安装记得将SDK一起安装上，这里就不单独提出来安装SDK了.因为Android Studio里面集成了SDK.
 
 
 ## Android学习图
-[](http://blog.tommyyang.cn/img/android/android-learning.png)
+<img src = "/img/android/android-learning.png">
 
 
 
