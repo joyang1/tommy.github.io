@@ -1,0 +1,28 @@
+---
+layout:     post
+title:      "android入门讲解"
+subtitle:   " \"android入门\""
+date:       2018-10-23 19:05:13
+author:     "Tommy"
+header-img: "img/android-bg.jpg"
+catalog: true
+tags:
+    - Java
+    - Android
+---
+
+
+# Android入门之Hello World
+
+## 前期准备
+- 安装JDK,准备JVM环境[下载](https://www.oracle.com/technetwork/java/javase/downloads/index.html){:target="_blank"}
+- 配置JDK环境变量[详细步骤](https://www.jianshu.com/p/171cfd6de15c){:target="_blank"}
+- 安装Android Studio(Android IDE) [国内下载](http://android-studio.org/index.php/download){:target="_blank"},
+[官方下载](https://developer.android.com/studio/){:target="_blank"}
+
+
+## Android学习图
+[](http://blog.tommyyang.cn/img/android/android-learning.png)
+
+
+
