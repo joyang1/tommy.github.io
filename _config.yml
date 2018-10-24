@@ -96,11 +96,19 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "tommy 博客园 博客",
+        title: "TommyYang's Blog(博客园)",
         href: "http://cnblogs.com/joyang"
+    },
+    {
+        title: "TommyYang's Blog(CSDN)",
+        href: "https://blog.csdn.net/joyang1"
     },
     {
         title: "一只不愿敲代码的程序员",
         href: "https://www.razeencheng.com"
+    },
+    {
+        title: "Hendry's Blog",
+        href: "http://nap7.com"
     }
 ]
