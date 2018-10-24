@@ -190,6 +190,15 @@
 })();
 </script>
 
+<script>
+    window.onload = function(){
+          //所有文章内a标签都为新建窗口打开
+          var aList = document.getElementsByTagName('a');//获取所有的标签a
+          for(var i=0;i<aList.length;i++){
+             aList[i].target='_blank';//定义成打开新窗口
+          }
+      }
+</script>
 
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
