@@ -17,6 +17,7 @@ tags:
 ## 前期准备
 - 安装JDK,准备JVM环境[下载](https://www.oracle.com/technetwork/java/javase/downloads/index.html){:target="_blank"}
 - 配置JDK环境变量[详细步骤](https://www.jianshu.com/p/171cfd6de15c){:target="_blank"}
+- Java IDE[下载](https://www.jetbrains.com/idea/download)
 - 安装Android Studio(Android IDE) [国内下载](http://android-studio.org/index.php/download){:target="_blank"},
 [官方下载](https://developer.android.com/studio/){:target="_blank"}
   
