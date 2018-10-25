@@ -61,6 +61,11 @@ tags:
    - 第一个Android程序
       - 欢迎大家一起学习Android
 
+## 第一次作业
+
+button点击事件的4种实现方式 [参考](http://blog.tommyyang.cn/2016/09/26/Android-onClick%E6%80%BB%E7%BB%93-2016/)
+
+
 ### 第二次讲解
    - 第二个Android 程序
       - 计算器1.0版本的实现
