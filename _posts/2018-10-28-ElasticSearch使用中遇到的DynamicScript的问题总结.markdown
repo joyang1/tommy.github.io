@@ -120,7 +120,7 @@ esClient.update(updateRequest).get();
 
 `方法如下`
 ```json
-POST _scripts/ctr_count
+POST _scripts/ctr_calc
 {
   "script": {
     "lang": "painless",
