@@ -16,7 +16,7 @@ tags:
 最近工程中会使用到ElasticSearch(以下统称ES),就是将一些统计结果(点击量:click_count,曝光量:impr_count,点击曝光比:ctr=click_count/impr_count)写入到ES,会用到ES的dynamic script去实时修改ctr。然后就遇到了too many dynamic script rejected的问题。
 
 ## 问题解决过程
-1. 获取EsClient的源码
+1.获取EsClient的源码
 
 ```java
 public static synchronized TransportClient getInstance() throws UnknownHostException {
@@ -34,7 +34,7 @@ public static synchronized TransportClient getInstance() throws UnknownHostExcep
     }
 ```
 
-2. 贴上有问题的源码(dynamic script update ctr)
+2.贴上有问题的源码(dynamic script update ctr)
 
 ```java
 TransportClient esClient = EsClient.getInstance();
@@ -47,7 +47,7 @@ esClient.update(updateRequest).get();
 
 用以上code去update ctr, 然后发现log中出现了too many dynamic script rejected,导致ctr更新失败。
 
-3. 寻找原因
+3.寻找原因
 
 在ES官网上查找Script相关的文档说明,在Script Parameters栏目发现以下参数
 
@@ -129,7 +129,7 @@ POST _scripts/ctr_count
 }
 ```
 
-4. 测试
+4.测试
 
 通过以上两种方法,都可以解决too many dynamic script rejected的问题。
 
