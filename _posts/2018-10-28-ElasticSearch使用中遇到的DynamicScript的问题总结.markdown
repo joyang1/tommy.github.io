@@ -105,8 +105,8 @@ TransportClient esClient = EsClient.getInstance();
 UpdateRequest updateRequest = new UpdateRequest("notes2", "note", "2");
 Map<String, Object> params = new HashMap() {
     {
-        put("read_time", 120);
-        put("read_num", 5);
+        put("click_count", 120);
+        put("impr_count", 5);
     }
 };
 
