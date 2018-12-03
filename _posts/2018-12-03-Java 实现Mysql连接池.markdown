@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Java 实现Mysql连接池"
+title:      "Mysql连接池具体实现"
 subtitle:   " \"mysql连接池实现\""
 date:       2018-12-03 18:05:13
 author:     "Tommy"
@@ -114,4 +114,4 @@ private static MyDataSource dataSource = null;
 ```
 
 ## 总结
-自己去实现一个连接池类，方便自己去理解连接池的概念；
+自己去实现一个连接池类，方便自己去理解连接池的概念；有任何问题，可以在评论区进行讨论。
