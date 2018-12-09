@@ -20,17 +20,21 @@ Java的爱好者们，一定对log4j是特别的熟悉，基本大多数项目�
 
 ## log4j配置文件的说明
 #### rootLogger说明
-rootLogger 指定log打印源，DEBUG为默认打印级别<br/>
+
+rootLogger 指定log打印源，DEBUG为默认打印级别
 - console 打印源为控制台 对应log4j.appender.console
 - file 打印源为文件 对应log4j.appender.file
 - kafka 打印源为kafka 对应log4j.appender.kafka
+
 log4j.logger.org.apache.kafka 打印源为kafka时指定log默认打印级别，不设置不会打印log到kafka
-```properties
+
+```
 log4j.rootLogger=DEBUG,console,file,kafka
 log4j.logger.org.apache.kafka=WARN
 ```
+
 #### 打印源为控制台
-```properties
+```
 #输出日志到控制台
 log4j.appender.console=org.apache.log4j.ConsoleAppender
 log4j.appender.console.Threshold=all
@@ -76,7 +80,7 @@ log4j.appender.file.MaxBackupIndex=5
 [demo地址](https://github.com/joyang1/log4j)
 
 ## 拓展
-[json格式log打印](https://github.com/joyang1/slf4j4json)
+[json格式log打印](https://github.com/joyang1/slf4j4json)<br/>
 [json格式log打印jar](http://blog.tommyyang.cn/2018/08/29/JsonLoggerForJava/)
 
 ## 讨论
