@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Log4j配置文件整理"
+title:      "Log4j配置文件整理-Kafka日志发送"
 subtitle:   " \"打印到log文件，kafka\""
 date:       2018-12-09 21:05:13
 author:     "Tommy"
