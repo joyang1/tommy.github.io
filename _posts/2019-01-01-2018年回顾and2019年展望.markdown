@@ -21,7 +21,7 @@ tags:
 #### 2018年--工作篇
 ##### PPTV
 2018年，6月份从PPTV离职到简书。所以先说说前半年在PPTV的工作，在PPTV这大半年(2017-8到2018-6)，主要负责的工作是PPTV移动
-客户端的自动话推送项目；项目中具体的细节在这里就不回顾了，主要说说工作用用到的一些技术栈；首先说说在推送项目中用到比较多的，也
+客户端的自动话推送项目；项目中具体的细节在这里就不回顾了，主要说说工作中用到的一些技术栈；首先说说在推送项目中用到比较多的，也
 比较优雅的开源框架[RxJava](https://github.com/ReactiveX/RxJava)。
 RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.
 通过上面的介绍，可以知道RxJava应该是更适用于异步编程，然后用到了观察者模式，使用起来很方便，我项目中用到的更多的场景就是结合多线程，
@@ -48,8 +48,10 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 在Jedis提了一个PR，后面在上面的开源库中去具体实现的。希望大家多去star。
 [Jedis](https://github.com/xetorthio/jedis/pull/1905)
 
-自己也开源了两个开源库，一个是支持Json格式的Log日志工具，一个是链式Json生成工具。希望大家star，给予鼓励:joy::joy:
-[slf4j4json](https://github.com/joyang1/slf4j4json)
+自己也开源了两个开源库，一个是支持Json格式的Log日志工具，一个是链式Json生成工具。希望大家star，给予鼓励。😂😂<br/>
+支持Json格式的Log日志工具:<br/>
+[slf4j4json](https://github.com/joyang1/slf4j4json)<br/>
+链式Json生成工具:<br/>
 [jsontool](https://github.com/joyang1/jsontool)
 
 #### 2018--偶像篇
@@ -67,5 +69,5 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 其他的自己也会努力去编写一些有意义的，适合开源的库。
 
 #### 篮球篇
-2019，要好好锻炼身体，经常去打打篮球，不然怕拉下职业病啊！:joy::joy:
+2019，要好好锻炼身体，经常去打打篮球，不然怕拉下职业病啊！😂😂
 最后说一句，2019，湖人总冠军！！！
