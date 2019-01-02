@@ -27,8 +27,7 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 通过上面的介绍，可以知道RxJava应该是更适用于异步编程，然后用到了观察者模式，使用起来很方便，我项目中用到的更多的场景就是结合多线程，
 线程池使用。例如，不同的场景通过不同的Observable订阅不同的Observer，然后把Observable和Observer作为参数传到线程中，交给线程池
 管理，这样可以让我们更清晰的去写多线程代码。在Observable中处理逻辑计算，计算结果交给Observer sink到具体的存储仓库(包括Hive、ElasticSearch、Redis、File等)。这个是RxJava里面使用到的一个场景，也是我项目中普遍使用的，但是RxJava肯定还有更多的用法，我这边
-研究的也不是特别深入，只是感觉使用起来非常nice，code写起来也非常清晰。所以推荐给大家，希望大家一起研究交流，[gitter of RxJava]()。
-这里帮一个好的开源项目交流框架推荐给大家(https://gitter.im),跟Github项目结合起来也是非常的方便；PS：也是非常适合大家去学习English哟，会接触到很多世界各国的开发者哦，大多数都是以英语交流的。
+研究的也不是特别深入，只是感觉使用起来非常nice，code写起来也非常清晰。所以推荐给大家，希望大家一起研究交流，[gitter of RxJava](https://gitter.im/ReactiveX/RxJava)。这里帮一个好的开源项目交流框架推荐给大家(https://gitter.im),跟Github项目结合起来也是非常的方便；PS：也是非常适合大家去学习English哟，会接触到很多世界各国的开发者哦，大多数都是以英语交流的。
 
 然后说一下，大数据离线计算中，用到的比较多的工具，[Apache Hive](https://github.com/apache/hive)，优点： 稳定，处理亿万级数据量。为什么会说到这个呢，因为在当下，作为存储仓库，还是非常普遍的，数据存储到HDFS文件，可以使用SQL查询，使用起来也比较简单。
 推荐对大数据感兴趣的同学们，最开始，需要自己做的就是去搭建一下Hadoop环境，安装Hive，去看看Hive的4种常见的数据存储结构和格式。
