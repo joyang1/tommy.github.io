@@ -8,8 +8,8 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 个人感慨
-    - 一些想法
-    - 一些建议
+    - 总结
+    - 生活
 ---
 
 > 人生需要我们努力去丰富
