@@ -31,12 +31,12 @@ GraphQL是由Facebook开源的；
 由于最近在弄一个开源项目[Email-Dashboard](https://github.com/joyang1/Email-Dashboard),
 里面也会用到GraphQL来实现API查询，这里实现语言就采用golang，该项目里面就用的是golang。
 
-[golang GraphQL官方库](https://github.com/graphql-go/graphql)
+[golang GraphQL官方库](https://github.com/graphql-go/graphql)<br/>
 [GraphQL结合http实现Handler](https://github.com/graphql-go/handler)
 
 main.go具体实现：
 
-``` go
+```
 
 import (
 	"fmt"
