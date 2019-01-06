@@ -35,7 +35,8 @@ GraphQL是由Facebook开源的；
 [GraphQL结合http实现Handler](https://github.com/graphql-go/handler)
 
 main.go具体实现：
-```go
+
+```golang
 package main
 
 import (
