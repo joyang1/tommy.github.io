@@ -1,0 +1,194 @@
+---
+layout:     post
+title:      "当下最流行的API查询语言GraphQL(一)"
+subtitle:   " \"再不用你就out了\""
+date:       2019-01-06 21:05:13
+author:     "Tommy"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Golang
+    - GraphQL
+---
+
+## 一种用于 API 的查询语言
+GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。 GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
+
+## 根据请求得到你想要的数据 
+最重要的是得到不多不少、正正好的数据。
+
+向你的 API 发出一个 GraphQL 请求就能准确获得你想要的数据，不多不少。 GraphQL 查询总是返回可预测的结果。使用 GraphQL 的应用可以工作得又快又稳，因为控制数据的是应用，而不是服务器。
+
+这篇博客我们就主要就讲讲根据请求获取不多不少的数据，这也是GraphQL最大的优点之一。
+
+## GraphQL来源
+GraphQL是由Facebook开源的；
+- [官网](https://graphql.org)
+- [国内官网](http://graphql.cn/)
+- [Github地址](https://github.com/facebook/graphql)
+
+## 具体实现
+由于最近在弄一个开源项目[Email-Dashboard](https://github.com/joyang1/Email-Dashboard),
+里面也会用到GraphQL来实现API查询，这里实现语言就采用golang，该项目里面就用的是golang。
+
+[golang GraphQL官方库](https://github.com/graphql-go/graphql)
+[GraphQL结合http实现Handler](https://github.com/graphql-go/handler)
+
+main.go具体实现：
+```go
+package main
+
+import (
+	"fmt"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+	"github.com/graphql-go/graphql"
+	"github.com/graphql-go/handler"
+	gqlhandler "github.com/graphql-go/handler"
+)
+
+type Comment struct {
+	ID     int    `json:"id"`
+	Author string `json:"author"`
+	Body   string `json:"body"`
+	PostID int    `json:"postId"`
+}
+
+func main() {
+	runGin()
+}
+
+//使用http实现GraphQL
+func runHTTP() {
+	rootQuery := graphql.ObjectConfig{
+		Name: "Query",
+		Fields: graphql.Fields{
+			"comment": &graphql.Field{
+				Type: CreateType(),
+				Args: graphql.FieldConfigArgument{
+					"id": &graphql.ArgumentConfig{
+						Type: graphql.NewNonNull(graphql.Int),
+					},
+				},
+				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+					id := p.Args["id"]
+					v, _ := id.(int)
+					return &Comment{ID: v, Author: "aa", Body: "bb", PostID: 2}, nil
+				},
+			},
+		}}
+
+	schema, err := graphql.NewSchema(graphql.SchemaConfig{
+		Query: graphql.NewObject(rootQuery),
+	})
+	if err != nil {
+		panic(err)
+	}
+	graphqlHandler := gqlhandler.New(&gqlhandler.Config{
+		Schema: &schema,
+	})
+	graphiqlHandler := gqlhandler.New(&gqlhandler.Config{
+		Schema:     &schema,
+		Pretty:     true,
+		GraphiQL:   false,
+		Playground: true,
+	})
+
+	http.Handle("/graphql", graphqlHandler)
+	http.Handle("/graphiql", graphiqlHandler)
+	fmt.Println(http.ListenAndServe(":8080", nil))
+}
+
+//使用gin实现GraphQL
+func runGin() {
+	router := gin.Default()
+	router.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, fmt.Sprintf("Hello from GraphQL API!"))
+	})
+
+	api := router.Group("/api/v3")
+
+    //核心入口
+	rootQuery := graphql.ObjectConfig{
+		Name: "Query",
+		Fields: graphql.Fields{
+            //要请求的元素
+			"comment": &graphql.Field{
+                //该元素里面的元素类型声明
+                Type: CreateType(),
+                //query参数声明
+				Args: graphql.FieldConfigArgument{
+					"id": &graphql.ArgumentConfig{
+						Type: graphql.NewNonNull(graphql.Int),
+					},
+				},
+				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+                    //具体参数获取
+					id := p.Args["id"]
+                    v, _ := id.(int)
+                    //数据返回
+					return &Comment{ID: v, Author: "aa", Body: "bb", PostID: 2}, nil
+				},
+			},
+		}}
+
+	schema, err := graphql.NewSchema(graphql.SchemaConfig{
+		Query: graphql.NewObject(rootQuery),
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	api.POST("/graphql", GraphqlHandler(schema))
+	api.GET("/graphql", GraphqlHandler(schema))
+
+	router.Run(":8080")
+}
+
+func CreateType() *graphql.Object {
+	return graphql.NewObject(graphql.ObjectConfig{
+		Name: "Comment",
+		Fields: graphql.Fields{
+			"id": &graphql.Field{
+				Type: graphql.NewNonNull(graphql.Int),
+			},
+			"author": &graphql.Field{
+				Type: graphql.String,
+			},
+			"body": &graphql.Field{
+				Type: graphql.String,
+			},
+			"postId": &graphql.Field{
+				Type: graphql.NewNonNull(graphql.Int),
+			},
+		},
+	})
+}
+
+//为GraphQL handler 结合gin封装的func
+func GraphqlHandler(schema graphql.Schema) gin.HandlerFunc {
+	h := handler.New(&handler.Config{
+		Schema: &schema,
+	})
+
+	return func(c *gin.Context) {
+		h.ServeHTTP(c.Writer, c.Request)
+	}
+}
+
+```
+go run main.go运行上面的实例，即可发布GraphQL接口
+
+## 结果展示
+gin通过http://localhost:8080/api/v3/graphql访问；<br/>
+http通过http://localhost:8080/graphql访问；<br/>
+如图片中带上具体的query参数即可；<br/>
+<img src = "/img/graphql.png">
+如上图片中，如果你只需要id和author，则你的query参数就设置成{comment(id:1){id,author}}；
+这样就只会给你返回id和author的json串。
+这样也就是返回不多不少，刚刚好的数据。
+
+## 后续
+第一篇GraphQL的入门介绍就到这了；
+GraphQL的介绍也会持续更新，有问题可以在下面留言。
