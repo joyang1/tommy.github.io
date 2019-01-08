@@ -34,7 +34,7 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 然后总结一下，在PPTV的工作吧，主要负责的就是移动客户端的自动化推送，负责所有的逻辑编写和技术文档编写；然后就是短信推送，以及Web端站内信推送。同时提供一套完整的Rest API推送接口，提供给其他的部门和项目组推送使用。第一次在项目中接触到了大数据相关技术栈，包括Hadoop、HBase、Hive、RabbitMQ、Kafka等。
 
 ##### 简书
-下面总结一下来到简书之后的工作，6月25号来到简书，一转眼也半年过去了，来到简书，加入的是推荐部门，负责推荐部门相关工作，包括推荐接口优化、文章页相关文章推荐、推送离线计算工具、用户画像实时计算系统的项目构建与项目优化与完善。来到简书，确实也接触到了许多新的知识，比如RPC（主要用到的RPC服务是GRPC）、[Apache Flink](https://github.com/apache/flink)、以及一些推荐算法(User2Vector,Doc2Vec,LDA等)，在公司算法工程师的推荐下，看了一本推荐算法入门书籍，在这里也推荐给大家(西瓜.pdf)，有兴趣的同学一定要记得去看一下，写的很不错哟。
+下面总结一下来到简书之后的工作，6月25号来到简书，一转眼也半年过去了，来到简书，加入的是推荐部门，负责推荐部门相关工作，包括推荐接口优化、文章页相关文章推荐、推送离线计算工具、用户画像实时计算系统的项目构建、项目优化与完善。在简书的工作中，确实也接触到了许多新的知识，比如RPC（主要用到的RPC服务是GRPC）、[Apache Flink](https://github.com/apache/flink)、以及一些推荐算法(User2Vector,Doc2Vec,LDA等)，在公司算法工程师的推荐下，看了一本推荐算法入门书籍，在这里也推荐给大家(西瓜.pdf)，有兴趣的同学一定要记得去看一下，写的很不错哟。
 这里主要说一下Flink吧，非常给力的实时流处理框架，类似于Spark Streaming，以前没接触过Spark Streaming，但是了解了Flink之后，不准备去学习Streaming了，就准备深入的学习一下Flink，本人准备整理一些Flink开眼库里面有用的知识点和易错点，在Github上已经开好了仓库，有兴趣的可以一起维护哟[Flink知识点整理](https://github.com/joyang1/DigAndBuried/blob/master/flink/question.md)。喜欢上Flink的原因是可以实时处理海量数据，有丰富的stream和batch api，最重要的是有自己的数据存储结构，有自己的序列化类库，非常的节约空间；举个例子吧，我在一次工作中，需要取10亿条数据，放到内存里面，然后一开始，通过Hive JDBC去取完，放到内存里，如你们所想，很快就OOM了，后面通过Flink去取，然后通过Flink API做 相关计算操作，一点问题没有。这就是我喜欢上Flink的理由，就是那么一瞬间的事情。听说2019年年初，阿里要开源他们的基于Flink开发的实时流处理框架Blink，很期待，会第一时间去使用的。Flink主要做的就是一些线上的实时计算操作，比如我们的是用户画像实时更新，文章CTR实时计算等；听说阿里淘宝也是使用的Blink实时计算用户画像，给用户推荐相关物品的。
 
 加入了go开发的大家庭。对go也有了一定的感情，之前总是觉得Java就是最好的，现在虽然还是觉得Java最好，但是go也不错，但是go在写多线程编程的时候，确实比Java nice很多。语言不是最重要的，掌握好具体的技术点才是重要的。
@@ -62,7 +62,7 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 
 #### 开源篇
 2019，已经在Github加入了一个开源项目的开发：
-[Email-Dashboard]（https://github.com/Email-Dashboard/Email-Dashboard）,2019希望这个项目可以在go方向上很好的完成，在业余时间，为该项目后端提供[GraphQL](https://github.com/graphql-go/graphql) Rest API接口。
+[Email-Dashboard](https://github.com/Email-Dashboard/Email-Dashboard),2019希望这个项目可以在go方向上很好的完成，在业余时间，为该项目后端提供[GraphQL](https://github.com/graphql-go/graphql) Rest API接口。
 
 其他的自己也会努力去编写一些有意义的，适合开源的库。
 
