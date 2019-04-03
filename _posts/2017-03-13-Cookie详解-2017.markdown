@@ -4,7 +4,7 @@ title:      "Cookie详解"
 subtitle:   " \"Cookie机制\""
 date:       2017-03-13 22:49:13
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-javaweb.jpg"
 catalog: true
 tags:
     - Cookie

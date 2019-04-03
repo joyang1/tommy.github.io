@@ -4,7 +4,7 @@ title:      "JsonLogger For Java"
 subtitle:   " \"JsonLogger 结合slf4j 实现json格式的log\""
 date:       2018-08-29 18:15:13
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-java.jpg"
 catalog: true
 tags:
     - Java

@@ -4,7 +4,7 @@ title:      "android入门讲解"
 subtitle:   " \"android入门\""
 date:       2018-10-23 19:05:13
 author:     "Tommy"
-header-img: "img/android-bg.jpg"
+header-img: "img/post-bg-android.jpg"
 catalog: true
 tags:
     - Java

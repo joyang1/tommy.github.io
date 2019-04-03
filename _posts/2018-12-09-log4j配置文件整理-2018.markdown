@@ -4,7 +4,7 @@ title:      "Log4j配置文件整理-Kafka日志发送"
 subtitle:   " \"打印到log文件，kafka\""
 date:       2018-12-09 21:05:13
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-java.jpg"
 catalog: true
 tags:
     - Java

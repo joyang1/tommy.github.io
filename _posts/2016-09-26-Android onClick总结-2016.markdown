@@ -4,7 +4,7 @@ title:      "Android Button onClick事件总结"
 subtitle:   " \"Button onClick事件\""
 date:       2016-09-26 12:41:00
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-android.jpg"
 catalog: true
 tags:
     - Android

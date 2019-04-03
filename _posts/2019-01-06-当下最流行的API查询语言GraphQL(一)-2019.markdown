@@ -4,7 +4,7 @@ title:      "当下最流行的API查询语言GraphQL(一)"
 subtitle:   " \"再不用你就out了\""
 date:       2019-01-06 21:05:13
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-go.jpg"
 catalog: true
 tags:
     - Golang

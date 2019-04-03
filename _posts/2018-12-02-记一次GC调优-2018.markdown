@@ -4,7 +4,7 @@ title:      "记一次GC调优"
 subtitle:   " \"GC调优\""
 date:       2018-12-02 12:05:13
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-java.jpg"
 catalog: true
 tags:
     - Java

@@ -4,7 +4,7 @@ title:      "面试总结"
 subtitle:   " \"Java面试总结\""
 date:       2018-03-19 18:15:13
 author:     "Tommy"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-java.jpg"
 catalog: true
 tags:
     - Java
