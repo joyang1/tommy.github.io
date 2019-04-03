@@ -22,8 +22,7 @@ tags:
 go实现共享锁，我用了一种比较简单的方式，借助缓冲区大小为n的channel去实现，当缓冲区个数达到n个之后，channel会阻塞。所以每启动一个goroutine，就向channel里面插入一个数据，每个goroutine完成，channel就输出一个数据，这样可以保证程序中最多只有n个goroutine在运行。下面看下代码具体实现。<br/>
 
 `semaphore.go`
-
-``` go
+``` golang
 package semaphore
 
 // Semaphore 借助channel实现的共享锁

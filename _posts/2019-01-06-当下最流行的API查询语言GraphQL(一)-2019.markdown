@@ -36,7 +36,7 @@ GraphQL是由Facebook开源的；
 
 main.go具体实现：
 
-```
+``` golang
 
 import (
 	"fmt"
