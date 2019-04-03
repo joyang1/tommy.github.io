@@ -19,9 +19,11 @@ tags:
 在上述的背景下，因为本人之前是Java开发者，所以想到了Java里面的Semaphore共享锁，共享锁就是可以一个有n个凭证去访问共享资源的共享锁，是不是一说这里，大家就都想到了解决办法，n个goroutine并行执行，其实就相当于有n个凭证可以去访问共享资源。所以下面我们要做的就是用go去实现一个共享锁，这样问题就解决了。 
 
 ## 具体实现
-go实现共享锁，我用了一种比较简单的方式，借助缓冲区大小为n的channel去实现，当缓冲区个数达到n个之后，channel会阻塞。所以每启动一个goroutine，就向channel里面插入一个数据，每个goroutine完成，channel就输出一个数据，这样可以保证程序中最多只有n个goroutine在运行。下面看下代码具体实现。
+go实现共享锁，我用了一种比较简单的方式，借助缓冲区大小为n的channel去实现，当缓冲区个数达到n个之后，channel会阻塞。所以每启动一个goroutine，就向channel里面插入一个数据，每个goroutine完成，channel就输出一个数据，这样可以保证程序中最多只有n个goroutine在运行。下面看下代码具体实现。<br/>
+
 `semaphore.go`
-```go
+
+``` go
 package semaphore
 
 // Semaphore 借助channel实现的共享锁
@@ -50,10 +52,11 @@ func (s *Semaphore) Release() {
 此时就又可以启动一个新的goroutine了。具体的实现逻辑大概就是这样的了。
 
 ## 测试案例
-下面通过一个小程序来测试一个整个流程。
+下面通过一个小程序来测试一个整个流程。<br/>
+
 `main.go`
 
-```go
+``` go
 package main
 
 import (
