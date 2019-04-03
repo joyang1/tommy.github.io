@@ -23,27 +23,27 @@ go实现共享锁，我用了一种比较简单的方式，借助缓冲区大小
 
 `semaphore.go`
 ```golang
-package semaphore
+    package semaphore
 
-// Semaphore 借助channel实现的共享锁
-type Semaphore struct {
-	Channel chan int
-}
+    // Semaphore 借助channel实现的共享锁
+    type Semaphore struct {
+        Channel chan int
+    }
 
-// NewSemaphore 创建一个共享锁 有parallelism个共享凭证
-func NewSemaphore(parallelism int) *Semaphore {
-	return &Semaphore{Channel: make(chan int, parallelism)}
-}
+    // NewSemaphore 创建一个共享锁 有parallelism个共享凭证
+    func NewSemaphore(parallelism int) *Semaphore {
+        return &Semaphore{Channel: make(chan int, parallelism)}
+    }
 
-// Acquire 获取一个凭证
-func (s *Semaphore) Acquire() {
-	s.Channel <- 1
-}
+    // Acquire 获取一个凭证
+    func (s *Semaphore) Acquire() {
+        s.Channel <- 1
+    }
 
-// Release 归还一个凭证
-func (s *Semaphore) Release() {
-	<-s.Channel
-}
+    // Release 归还一个凭证
+    func (s *Semaphore) Release() {
+        <-s.Channel
+    }
 ```
 
 定义一个chan int类型，用来缓冲凭证个数，每获取一个凭证，就向channel里面加入一个int数据。<br/>
@@ -56,69 +56,69 @@ func (s *Semaphore) Release() {
 `main.go`
 
 ```golang
-package main
+    package main
 
-import (
-	"fmt"
-	"sync"
-	"time"
+    import (
+        "fmt"
+        "sync"
+        "time"
 
-	"jianshu.com/mozi/semaphore"
-)
+        "jianshu.com/mozi/semaphore"
+    )
 
-func main() {
-	data := make(chan int, 1000)
-	go func() {
-		defer close(data) //一定要close channel
-		for i := 1; i < 11000; i++ {
-			data <- i
-			time.Sleep(1)
-		}
-	}()
-	g := sync.WaitGroup{}
-	sem := semaphore.NewSemaphore(5)
-	flag := false //用来标志是否跳出外围死循环
+    func main() {
+        data := make(chan int, 1000)
+        go func() {
+            defer close(data) //一定要close channel
+            for i := 1; i < 11000; i++ {
+                data <- i
+                time.Sleep(1)
+            }
+        }()
+        g := sync.WaitGroup{}
+        sem := semaphore.NewSemaphore(5)
+        flag := false //用来标志是否跳出外围死循环
 
-	i := 0 //在运行的goroutine个数
+        i := 0 //在运行的goroutine个数
 
-	for {
-		sem.Acquire()
-		g.Add(1)
-		i++
-		fmt.Println(fmt.Sprintf("goroutine-%d", i))
-		go func() {
-			defer g.Done()
-			defer sem.Release() //defer感觉可以理解为java中的finally
-			var items []int
-			for item := range data {
-				items = append(items, item)
-				if len(items) == 1000 {
-					break
-				}
-			}
-			if len(items) == 0 {
-				flag = true
-			}
-			consumer(items)
-			i--
-		}()
+        for {
+            sem.Acquire()
+            g.Add(1)
+            i++
+            fmt.Println(fmt.Sprintf("goroutine-%d", i))
+            go func() {
+                defer g.Done()
+                defer sem.Release() //defer感觉可以理解为java中的finally
+                var items []int
+                for item := range data {
+                    items = append(items, item)
+                    if len(items) == 1000 {
+                        break
+                    }
+                }
+                if len(items) == 0 {
+                    flag = true
+                }
+                consumer(items)
+                i--
+            }()
 
-		if flag {
-			break
-		}
-	}
+            if flag {
+                break
+            }
+        }
 
-	g.Wait()
-	fmt.Println("exit program")
-}
+        g.Wait()
+        fmt.Println("exit program")
+    }
 
-func consumer(data []int) {
-	for _, v := range data {
-		if v%1000 == 0 {
-			fmt.Println(v)
-		}
-	}
-}
+    func consumer(data []int) {
+        for _, v := range data {
+            if v%1000 == 0 {
+                fmt.Println(v)
+            }
+        }
+    }
 ```
 
 定义了1个缓冲区为1000的channel去存储数据，然后在每个goroutine里面的去消费数据，将能整除1000的数打印出来，每个goroutine每次处理1000个数据。<br/>
