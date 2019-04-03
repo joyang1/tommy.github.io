@@ -1,7 +1,6 @@
 ---
 layout: resume
 title: 个人简历
-avatar: /img/tommy1.jpg
 pdf: https://blog.tommyyang.cn/resume/2019-resume.pdf
 ---
 <br><br><br>
