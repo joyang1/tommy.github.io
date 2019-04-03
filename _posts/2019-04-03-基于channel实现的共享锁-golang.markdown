@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "当下最流行的API查询语言GraphQL(一)"
-subtitle:   " \"再不用你就out了\""
+title:      "golang-基于channel实现的共享锁"
+subtitle:   " \"golang共享锁\""
 date:       2019-04-03 11:05:13
 author:     "Tommy"
 header-img: "img/post-bg-go.jpg"
