@@ -8,7 +8,6 @@ pdf: https://blog.tommyyang.cn/resume/2019-resume.pdf
 
 - 手机：18365103567
 - Email：tingzai.yang@gmail.com
-- QQ号：402354031
 
 ---
 
