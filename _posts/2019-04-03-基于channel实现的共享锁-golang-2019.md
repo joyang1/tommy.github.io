@@ -25,8 +25,6 @@ go实现共享锁，我用了一种比较简单的方式，借助缓冲区大小
 
 ```
 
-package semaphore
-
 // Semaphore 借助channel实现的共享锁
 type Semaphore struct {
     Channel chan int
@@ -58,8 +56,6 @@ func (s *Semaphore) Release() {
 `main.go`
 
 ```
-
-package main
 
 import (
     "fmt"
