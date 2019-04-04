@@ -1,7 +1,8 @@
 ---
-layout: resume
+layout: resumes
 title: 个人简历
 pdf: https://blog.tommyyang.cn/resume/2019-resume.pdf
+nav: false
 ---
 <br><br><br>
 # 联系方式
