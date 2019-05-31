@@ -29,14 +29,14 @@ rootLogger 指定log打印源，DEBUG为最低打印级别<br/>
 
 log4j.logger.org.apache.kafka 打印源为kafka时指定log默认打印级别，不设置不会打印log到kafka
 
-``` properties
+```
 log4j.rootLogger=DEBUG,console,file,kafka
 #往kafka打印log时该属性必须指定
 log4j.logger.org.apache.kafka=INFO 
 ```
 
 #### 打印源为控制台
-``` properties
+```
 #输出日志到控制台
 log4j.appender.console=org.apache.log4j.ConsoleAppender
 log4j.appender.console.Threshold=all
@@ -46,7 +46,7 @@ log4j.appender.console.layout.ConversionPattern=%-d{yyyy-MM-dd HH\:mm\:ss} [%c\:
 ```
 
 #### 打印源为kafka
-``` properties
+```
 #输出日志到kafka
 log4j.appender.kafka=org.apache.kafka.log4jappender.KafkaLog4jAppender
 #设置topic
@@ -63,7 +63,7 @@ log4j.appender.kafka.layout.ConversionPattern= %m
 ```
 
 #### 打印源为file
-``` properties
+```
 # appender file
 log4j.appender.file=org.apache.log4j.RollingFileAppender
 #设置log文件名
@@ -82,7 +82,7 @@ log4j.appender.file.MaxBackupIndex=5
 比如我只想往kafka中写入log、或者我只想往文件中写入log，我们可以按下面的方式进行配置打印源。<br/>
 通过log4j.logger配置单个的打印源，不实用rootLogger配置。
 
-``` properties
+```
 
 # 单独指定打印源为kafka
 log4j.logger.kafka_log=INFO,kafka_log

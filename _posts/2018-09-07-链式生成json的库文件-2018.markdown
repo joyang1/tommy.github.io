@@ -22,7 +22,7 @@ tags:
 
 1. 添加repository
 
-``` java
+```
 <repositories>
     <repository>
         <id>release</id>
@@ -37,7 +37,7 @@ tags:
 
 2.添加dependency
 
-``` java
+```
 <dependency>
     <groupId>cn.tommyyang</groupId>
     <artifactId>jsontool</artifactId>
@@ -50,7 +50,7 @@ tags:
   
 1.直接链式生成json串
   
-``` java
+```
 
 String json = Json.newJson().field("key1","value1").field("key2", "value2").longField("long", 22L).json();
 System.out.println(json);
@@ -60,7 +60,7 @@ System.out.println(json);
 
 2.json串中需要带特定的键值对
 
-``` java
+```
 
 //如下{"key","value"}键值对在json1,json2,json3,json4中都需要
 JsonBuilder jsonBuilder = Json.newJson().field("key", "value").newBuilder();
@@ -76,7 +76,7 @@ System.out.println(json4);
 ```
 
 ## 输出
-``` json
+```
 {"key1":"value1","key2":"value2","long":22}
 {"key":"value","akey":"aaa"}
 {"bkey":"bbb","key":"value"}
