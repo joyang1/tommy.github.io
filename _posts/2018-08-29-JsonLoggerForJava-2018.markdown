@@ -83,7 +83,14 @@ jsonLogger.field("msg","infotest2").longField("long", 23L).log();
 
 ## 输出
 ```
-{"key1":"value1","key2":1,"index":"server-end-log","host":"DESKTOP-2B1VG6J","level":"info","time":1535021174}
+{
+    "key1":"value1",
+    "key2":1,
+    "index":"server-end-log",
+    "host":"DESKTOP-2B1VG6J",
+    "level":"info",
+    "time":1535021174
+}
 ```
 
 

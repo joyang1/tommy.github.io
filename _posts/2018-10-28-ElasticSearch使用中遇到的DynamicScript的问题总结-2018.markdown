@@ -18,7 +18,7 @@ tags:
 ## 问题解决过程
 ### 获取EsClient的源码
 
-```java
+```
 public static synchronized TransportClient getInstance() throws UnknownHostException {
         if(transportClient == null){
             String clusterName = DataSourceUtils.getProperteValue("es.cluster", "es");
@@ -36,7 +36,7 @@ public static synchronized TransportClient getInstance() throws UnknownHostExcep
 
 ### 贴上有问题的源码(dynamic script update ctr)
 
-```java
+```
 TransportClient esClient = EsClient.getInstance();
 UpdateRequest updateRequest = new UpdateRequest("notes2", "note", "2");
 String script = String.format("ctx._source.click_count=%d;ctx._source.impr_count=%d;ctx._source.ctr=(double)ctx._source.click_count/ctx._source.impr_count", 15, 120);
@@ -83,7 +83,7 @@ Instead, pass it in as a named parameter:
 通过以上code我们可以得知 对于dynamic script我们应该使用params参数来传递参数,而不是把参数拼接在script中,这样就不需要ES就会在第一次的时候把script编译后保存在缓存中,而不是每次都会去编译。
 
 `方法一` 使用inline type script
-```java
+```
 TransportClient esClient = EsClient.getInstance();
 UpdateRequest updateRequest = new UpdateRequest("notes2", "note", "2");
 Map<String, Object> params = new HashMap() {
@@ -100,7 +100,7 @@ esClient.update(updateRequest).get();
 ```
 
 `方法二` 使用stored type script
-```java
+```
 TransportClient esClient = EsClient.getInstance();
 UpdateRequest updateRequest = new UpdateRequest("notes2", "note", "2");
 Map<String, Object> params = new HashMap() {
@@ -119,7 +119,7 @@ esClient.update(updateRequest).get();
 使用方法二stored script的时候 需要在kibana里面将script存储到ES集群里面
 
 `方法如下`
-```json
+```
 POST _scripts/ctr_calc
 {
   "script": {

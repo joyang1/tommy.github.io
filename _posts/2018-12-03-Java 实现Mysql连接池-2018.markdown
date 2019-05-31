@@ -22,7 +22,7 @@ mysql server连接，如果你在短时间内与mysql server频繁连接的话�
 (一个线程来获取就要从池子里面删除一个connection，线程运行完就要将connection加入到池子)，所以采用此结构；<br/>
 下面讲一下代码的具体实现，实现一个具体的DataSource类：
 #### DataSource类
-```java
+```
     private final String url = ""; //mysql 连接串
     private final String user = ""; //用户名
     private final String password = ""; //密码
@@ -81,7 +81,7 @@ mysql server连接，如果你在短时间内与mysql server频繁连接的话�
 #### JDBCUtils具体实现类
 在DataSource类的同包内定义该类，对外提供获取connection连接和释放Connection连接的工具类。<br/>
 具体实现如下：
-```java
+```
 private static MyDataSource dataSource = null;
     private final static String driver = "";//jdbc driver name
 
