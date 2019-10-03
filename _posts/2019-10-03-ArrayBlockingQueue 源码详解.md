@@ -15,7 +15,7 @@ tags:
 
 ## BlockingQueue 介绍
 `BlockingQueue` 继承自  `Queue` 接口,下面看看阻塞队列提供的接口；
-```java
+```
 public interface BlockingQueue<E> extends Queue<E> {
     /**
      * 插入数据到队列尾部（如果立即可行且不会超过该队列的容量）
@@ -124,7 +124,7 @@ ReentrantLock 的具体分析会在 Lock 章节进行具体分析的； 对于 L
 阻塞的线程将进入争夺锁资源的过程中，谁先抢到锁就可以先执行，没有固定的先后顺序。 
 
 下面对 ArrayBlockingQueue 构造方法进行分析：
-``` java
+```
 /**
  * 创建一个具体容量的队列，默认是非公平队列
  */
@@ -147,7 +147,7 @@ public ArrayBlockingQueue(int capacity, boolean fair) {
 ```
 
 ArrayBlockingQueue 除了实现上述 BlockingQueue 接口的方法，其他方法介绍如下：
-``` java
+```
 //返回队列剩余容量
 public int remainingCapacity()
 
@@ -179,7 +179,7 @@ public Iterator<E> iterator()
 ### ArrayBlockingQueue 源码和实现原理分析
 #### 内部成员变量分析
 
-``` java
+```
 public class ArrayBlockingQueue<E> extends AbstractQueue<E>
         implements BlockingQueue<E>, java.io.Serializable {
 
@@ -224,7 +224,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E>
 <img src="/img/java/datastructure/abq1.png">
 
 #### 添加(阻塞添加)的实现分析
-``` java
+```
 /**
  * 在当前 put 位置插入数据，put 位置前进一位，
  * 同时唤醒 notEmpty 条件对象等待队列(链表)中第一个可用线程去 take 数据。
@@ -285,7 +285,7 @@ offer 方法和 add 方法实现很简单，大家只需要知道其区别就好
 
 下面看看阻塞添加方法(put)
 
-``` java
+```
 /**
  * 插入数据到队列尾部，如果队列已满，阻塞等待空间
  */
@@ -318,7 +318,7 @@ public void put(E e) throws InterruptedException {
 
 同上分析，我们首先从 dequeue 方法分析开始。
 
-``` java
+```
 /**
  * 提取 takeIndex 位置上的元素， 然后 takeIndex 前进一位，
  * 同时唤醒 notFull 等待队列(链表)中的第一个可用线程去 put 数据。
@@ -359,7 +359,7 @@ public E poll() {
 
 上面 poll() 方法分析得很清晰了，内部通过 dequeue 删除队列头元素。下面分析下 peek 方法，与 poll 有较大的区别。
 
-``` java
+```
 
 // 返回数组上第 i 个元素
 final E itemAt(int i) {
@@ -386,7 +386,7 @@ public E peek() {
 
 下面来分析下阻塞提取 take 方法：
 
-``` java
+```
 // 从队列头部提取数据，队列中没有元素则阻塞，阻塞期间线程可中断
 public E take() throws InterruptedException {
     final ReentrantLock lock = this.lock;
@@ -412,7 +412,7 @@ public E take() throws InterruptedException {
 
 分析完提取方法后，我们来分析一下 ArrayBlockingQueue 中的删除元素的 remove 方法。
 
-``` java
+```
 void removeAt(final int removeIndex) {
     // assert lock.getHoldCount() == 1;
     // assert items[removeIndex] != null;
@@ -478,7 +478,7 @@ public boolean remove(Object o) {
 
 #### ArrayBlockingQueue 的迭代器分析
 
-```java
+```
 
 private class Itr implements Iterator<E> {
     /** Index to look for new nextItem; NONE at end */
