@@ -8,7 +8,6 @@ header-img: "img/post-bg-java.jpg"
 catalog: true
 tags:
     - Java
-    - MySQL
     - Interview
 ---
 
